@@ -24,7 +24,8 @@ LINKS = (('Pelican', 'http://getpelican.com'),
          ('Python.org', 'http://python.org'),
          ('Jinja2', 'http://jinja.pocoo.org'),
          ('Markdown', 'https://daringfireball.net/projects/markdown'),
-         ('Python-Markdown', 'https://python-markdown.github.io'),)
+         ('Python-Markdown', 'https://python-markdown.github.io'),
+         ('pelican-blue', 'https://github.com/Parbhat/pelican-blue'),)
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/soundlake'),
@@ -43,3 +44,12 @@ EXTRA_PATH_METADATA = {
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# Theme - pelican-blue
+THEME = 'themes/pelican-blue'
+
+SIDEBAR_DIGEST = 'Programmer / Developer'
+FAVICON = 'favicon.png'
+DISPLAY_PAGES_ON_MENU = True
+TWITTER_USERNAME = 'sound_lake'
+MENUITEMS = (('Blog', SITEURL),)
