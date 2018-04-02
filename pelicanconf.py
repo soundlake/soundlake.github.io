@@ -33,5 +33,13 @@ SOCIAL = (('github', 'https://github.com/soundlake'),
 
 DEFAULT_PAGINATION = 10
 
+STATIC_PATHS = [
+    'static',
+]
+
+EXTRA_PATH_METADATA = {
+    'static/favicon.png': {'path': 'favicon.png'},
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
