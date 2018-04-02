@@ -43,6 +43,7 @@ STATIC_PATHS = [
 
 EXTRA_PATH_METADATA = {
     'static/favicon.png': {'path': 'favicon.png'},
+    'static/CNAME': {'path': 'CNAME'},
 }
 
 # Uncomment following line if you want document-relative URLs when developing
