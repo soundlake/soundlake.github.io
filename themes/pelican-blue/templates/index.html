@@ -13,7 +13,9 @@
 {% endblock head %}
 {% block content_title %}{% endblock %}
 {% block content %}
-    <h1 class="title">Hi, I'm {{ AUTHOR }}</h1>
+    <a href="{{ SITEURL }}">
+        <h1 class="title">{{ AUTHOR|capitalize }}'s Blog</h1>
+    </a>
     {% if articles %}
         <ol>
             {% block heading %}<h2 class="latest">Latest Posts</h2>{% endblock %}

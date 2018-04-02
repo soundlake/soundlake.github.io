@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'soundlake'
 SITENAME = u'soundlake'
-SITEURL = 'https://soundlake.net'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -29,7 +29,10 @@ LINKS = (('Pelican', 'http://getpelican.com'),
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/soundlake'),
-          ('stackoverflow', 'https://stackoverflow.com/users/4276533/soundlake'),
+          ('bitbucket', 'https://bitbucket.org/soundlake'),
+          ('gitlab', 'https://gitlab.com/soundlake'),
+          ('stack-overflow', 'https://stackoverflow.com/users/4276533/soundlake'),
+          ('twitter', 'https://twitter.com/sound_lake'),
           ('soundcloud', 'https://soundcloud.com/soundlake'),)
 
 DEFAULT_PAGINATION = 10
@@ -48,7 +51,7 @@ EXTRA_PATH_METADATA = {
 # Theme - pelican-blue
 THEME = 'themes/pelican-blue'
 
-SIDEBAR_DIGEST = 'Programmer / Developer'
+SIDEBAR_DIGEST = 'Developer / Programmer / Musician'
 FAVICON = 'favicon.png'
 DISPLAY_PAGES_ON_MENU = True
 TWITTER_USERNAME = 'sound_lake'

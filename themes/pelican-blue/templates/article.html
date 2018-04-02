@@ -35,34 +35,34 @@
                     {% endif %}
                 </div>
 
-                <div class="entry-social">
+                <div class="social">
                     <span class="twitter"><a target="_blank" rel="nofollow"
                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
                                              title="Twitter"
-                                             href="https://twitter.com/share?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}&via={{ TWITTER_USERNAME }}"><img
-                            src="{{ SITEURL }}/theme/images/icons/twitter-s.png"></a></span>
+                                             href="https://twitter.com/share?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}&via={{ TWITTER_USERNAME }}">
+                        <i class="fab fa-twitter fa-2x"></i></a></span>
 
                     <span class="gplus"><a target="_blank" title="Google +"
                                            href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}&hl=fr"
                                            rel="nofollow"
-                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
-                            src="{{ SITEURL }}/theme/images/icons/google-s.png"></a></span>
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-google-plus fa-2x"></i></a></span>
 
                     <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
                                               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
-                                              href="https://www.facebook.com/sharer.php?u={{ SITEURL }}/{{ article.url }}&t={{ article.title }}"><img
-                            src="{{ SITEURL }}/theme/images/icons/facebook-s.png"></a></span>
+                                              href="https://www.facebook.com/sharer.php?u={{ SITEURL }}/{{ article.url }}&t={{ article.title }}">
+                        <i class="fab fa-facebook fa-2x"></i></a></span>
 
                     <a target="_blank" title="Linkedin"
                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
                        rel="nofollow"
-                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
-                            src="{{ SITEURL }}/theme/images/icons/linkedin-s.png"></a>
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-linkedin fa-2x"></i></a></span>
 
                     <span class="mail"><a
                             href="mailto:?subject={{ article.title }}&amp;body=Viens découvrir un article à propos de [{{ article.title }}] sur le site de {{ AUTHOR }}. {{ SITEURL }}/{{ article.url }}"
-                            title="Share by Email" target="_blank"><img
-                            src="{{ SITEURL }}/theme/images/icons/mail-s.png"></a></span>
+                            title="Share by Email" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i></a></span>
                 </div>
             </div>
             {% if DISQUS_SITENAME %}
