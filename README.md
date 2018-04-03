@@ -1,5 +1,7 @@
 # soundlake
 
+[![Build Status](https://travis-ci.org/soundlake/soundlake.net.svg?branch=master)](https://travis-ci.org/soundlake/soundlake.net)
+
 my online page
 
 This uses [`virtualenv`].
