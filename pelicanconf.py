@@ -25,7 +25,8 @@ LINKS = (('Pelican', 'http://getpelican.com'),
          ('Jinja2', 'http://jinja.pocoo.org'),
          ('Markdown', 'https://daringfireball.net/projects/markdown'),
          ('Python-Markdown', 'https://python-markdown.github.io'),
-         ('pelican-blue', 'https://github.com/Parbhat/pelican-blue'),)
+         ('pelican-blue', 'https://github.com/Parbhat/pelican-blue'),
+         ('source code', 'https://github.com/soundlake/soundlake.net'),)
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/soundlake'),
