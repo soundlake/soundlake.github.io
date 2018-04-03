@@ -1,7 +1,7 @@
 Title: The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI
 Date: 2018-04-02 10:28
 Modified: 2018-04-02 21:51
-Category: Python
+Category: Dev
 Tags: github, travis, pelican, python, CI
 Slug: exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci
 Authors: soundlake
