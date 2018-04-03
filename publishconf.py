@@ -22,3 +22,5 @@ DELETE_OUTPUT_DIRECTORY = True
 
 DISQUS_SITENAME = "https-soundlake-net"
 #GOOGLE_ANALYTICS = ""
+
+MENUITEMS = (('Blog', SITEURL),)
