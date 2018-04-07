@@ -34,6 +34,8 @@ SOCIAL = (('github', 'https://github.com/soundlake'),
           ('gitlab', 'https://gitlab.com/soundlake'),
           ('stack-overflow', 'https://stackoverflow.com/users/4276533/soundlake'),
           ('twitter', 'https://twitter.com/sound_lake'),
+          ('tumblr', 'https://sound-lake.tumblr.com'),
+          ('telegram', 'https://t.me/soundlake'),
           ('soundcloud', 'https://soundcloud.com/soundlake'),)
 
 DEFAULT_PAGINATION = 10
