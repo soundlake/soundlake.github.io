@@ -57,6 +57,7 @@ THEME = 'themes/pelican-blue'
 
 SIDEBAR_DIGEST = 'Developer / Programmer / Musician'
 FAVICON = 'favicon.png'
-DISPLAY_PAGES_ON_MENU = True
 TWITTER_USERNAME = 'sound_lake'
 MENUITEMS = (('Blog', SITEURL),)
+
+
