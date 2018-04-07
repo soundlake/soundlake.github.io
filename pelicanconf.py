@@ -19,6 +19,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Menu
+MENUITEMS = (('Blog', SITEURL),)
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com'),
          ('Python.org', 'http://python.org'),
@@ -58,6 +60,4 @@ THEME = 'themes/pelican-blue'
 SIDEBAR_DIGEST = 'Developer / Programmer / Musician'
 FAVICON = 'favicon.png'
 TWITTER_USERNAME = 'sound_lake'
-MENUITEMS = (('Blog', SITEURL),)
-
 
