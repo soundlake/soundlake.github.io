@@ -1,7 +1,6 @@
 Title: Best Practice to Check Table Information in MySQL
 Date: 2017-01-09 10:00
 Modified: 2018-04-03 22:00
-Category: Dev
 Tags: MySQL, MariaDB
 Slug: best-practice-to-check-table-information-in-mysql
 Authors: soundlake

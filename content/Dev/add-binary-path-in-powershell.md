@@ -1,7 +1,6 @@
 Title: Add Binary Path in PowerShell
 Date: 2016-12-28 10:00
 Modified: 2018-04-03 21:00
-Category: Dev
 Tags: Windows, PowerShell, environment
 Slug: add-binary-path-in-powershell
 Authors: soundlake

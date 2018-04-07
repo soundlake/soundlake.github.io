@@ -1,7 +1,6 @@
 Title: Create dummy file in Linux
 Date: 2016-12-16 10:00
 Modified: 2018-04-03 17:00
-Category: Dev
 Tags: linux, dummy, command, CLI
 Slug: create-dummy-file-in-linux
 Authors: soundlake

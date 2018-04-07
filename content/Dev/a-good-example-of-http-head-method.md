@@ -1,7 +1,6 @@
 Title: A Good Example of HTTP HEAD Method
 Date: 2016-12-23 10:00
 Modified: 2018-04-03 20:00
-Category: Dev
 Tags: http, restful, api
 Slug: a-good-example-of-http-head-method
 Authors: soundlake
