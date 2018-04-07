@@ -2,7 +2,6 @@ Title: Best Practice to Check Table Information in MySQL
 Date: 2017-01-09 10:00
 Modified: 2018-04-03 22:00
 Tags: MySQL, MariaDB
-Authors: soundlake
 Summary: There's a better way to check the table schema in MySQL.
 
 I usually use `DESC` to check the columns of the table,

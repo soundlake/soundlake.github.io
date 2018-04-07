@@ -2,7 +2,6 @@ Title: Add Binary Path in PowerShell
 Date: 2016-12-28 10:00
 Modified: 2018-04-03 21:00
 Tags: Windows, PowerShell, environment
-Authors: soundlake
 Summary: Configure your PATH environment variable in PowerShell
 
 Recently, I need to use `makecert` command in PowerShell, but `makecert.exe` wasn't

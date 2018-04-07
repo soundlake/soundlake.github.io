@@ -2,7 +2,6 @@ Title: A Good Example of HTTP HEAD Method
 Date: 2016-12-23 10:00
 Modified: 2018-04-03 20:00
 Tags: http, restful, api
-Authors: soundlake
 Summary: HEAD method is not the most popular, but still it has a role.
 
 I've never been used `HEAD` method in HTTP. I even don't know what
