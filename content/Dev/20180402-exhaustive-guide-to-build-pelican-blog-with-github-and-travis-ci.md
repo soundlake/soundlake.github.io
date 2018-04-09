@@ -169,7 +169,7 @@ Now, you can push to the [Github] repository, you've created.
 #### Travis
 
 Once you've created [Github]'s public repository, you can find it in [Travis CI]
-dashboard. It's on `https://travis-ci.org/profile/{github_username}`. In this
+dashboard. It's on `https://travis-ci.org/profile/{Github Username}`. In this
 page, you can activate the continuous integration by your [Github] repository.
 
 Now, you need to create `.travis.yml` file in your repository.
@@ -214,13 +214,13 @@ how to create the token. When you create the token, don't forget to check
 commits to your [Github] repository.
 
 After you create the token, copy it and go to [Travis CI]'s repository settings
-page. The url would be `https://travis-ci.org/{username}/{repo_name}/settings`.
+page. The url would be `https://travis-ci.org/{username}/{repo name}/settings`.
 In that page, you can configure the environment variables. Creat a new variable
 with `GITHUB_TOKEN` for the name and the copied token for the value.
 
 Now, if you push the `master` branch, then [Travis CI] will be noticed. Then,
 it will build, make a new commit, and push to `gh-pages` branch. It's the time
-to check out `https://{username}.github.io/{repo_name}`
+to check out `https://{username}.github.io/{repo name}`
 
 
 [Debian]: https://www.debian.org
