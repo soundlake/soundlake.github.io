@@ -60,8 +60,8 @@ cd path/to/the/directory
 source bin/activate
 ```
 
-[`source`] is [bash]'s built-in command. According to the document, that I
-linked, it does the following.
+[`source`](https://ss64.com/bash/source.html) is [bash]'s built-in command.
+According to the document, that I linked, it does the following.
 
 > Read and execute commands from the filename argument in the current shell
 context.
@@ -238,4 +238,3 @@ to check out `https://{username}.github.io/{repo name}`
 [npm]: https://www.npmjs.com
 [pip]: https://pip.pypa.io
 [reStructedText]: http://docutils.sourceforge.net/rst.html
-[`source`]: https://ss64.com/bash/source.html
