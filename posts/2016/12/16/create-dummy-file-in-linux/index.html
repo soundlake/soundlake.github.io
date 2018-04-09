@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <!-- Site Meta Data -->
-        <title>Create dummy file in Linux</title>
+        <title>Create dummy file in Linux</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="soundlake">
@@ -37,12 +37,12 @@
 
     <meta name="twitter:creator" content="sound_lake">
     <meta name="twitter:url" content="https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/">
-    <meta name="twitter:title" content="soundlake ~ Create dummy file in Linux">
-    <meta name="twitter:description" content="A few options to create a dummy file in Linux">
+    <meta name="twitter:title" content="soundlake ~ Create dummy file in Linux">
+    <meta name="twitter:description" content="A few options to create a dummy file in Linux">
 
     <!-- Facebook Meta Data -->
-    <meta property="og:title" content="soundlake ~ Create dummy file in Linux"/>
-    <meta property="og:description" content="A few options to create a dummy file in Linux"/>
+    <meta property="og:title" content="soundlake ~ Create dummy file in Linux"/>
+    <meta property="og:description" content="A few options to create a dummy file in Linux"/>
     <meta property="og:image" content=""/>
 </head>
 
@@ -59,7 +59,7 @@
                 <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
 
                 <li><a class="nav__link" href="https://soundlake.net/pages/about/">About</a></li>
-                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short Resume</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short&nbsp;Resume</a></li>
 
         </ul>
     </nav>
@@ -93,24 +93,24 @@
     <section id="content">
         <article>
             <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/" rel="bookmark"
-                                                  title="Permalink to Create dummy file in Linux">Create dummy file in Linux</a></h2>
+                                                  title="Permalink to Create dummy file in Linux">Create dummy file in&nbsp;Linux</a></h2>
             <div class="entry-content blog-post">
-                <h3>3 options to create a dummy file</h3>
+                <h3>3 options to create a dummy&nbsp;file</h3>
 <p>Sometimes a big size dummy file is necessary.
 There are roughly 3 ways to achieve this: <code>dd</code>, <code>truncate</code>, <code>fallocate</code>.
 I found them from <a href="http://stackoverflow.com/questions/257844/quickly-create-a-large-file-on-a-linux-system">this Stackoverflow answer</a>.</p>
 <h4>1. <code>dd</code></h4>
-<p>It's the most famous one, but it's basically for copy data from one to another
-in hard way. It's accurate but slow. If you want just a dummy file, it's not a
-good choice.</p>
+<p>It&#8217;s the most famous one, but it&#8217;s basically for copy data from one to another
+in hard way. It&#8217;s accurate but slow. If you want just a dummy file, it&#8217;s not a
+good&nbsp;choice.</p>
 <h4>2. <code>truncate</code></h4>
-<p>It's maybe the fasted way. But it doesn't actually allocate the space. What it
+<p>It&#8217;s maybe the fasted way. But it doesn&#8217;t actually allocate the space. What it
 does is cheat the file system with repetition of smaller amount of data. If you
-really want to <em>allocate</em> the space, it's not the best one.</p>
+really want to <em>allocate</em> the space, it&#8217;s not the best&nbsp;one.</p>
 <h4>3. <code>fallocate</code></h4>
-<p>Now, it's the last and <strong>the best</strong> option.</p>
+<p>Now, it&#8217;s the last and <strong>the best</strong>&nbsp;option.</p>
 <h3>More about <code>fallocate</code></h3>
-<p>The basic usage is</p>
+<p>The basic usage&nbsp;is</p>
 <div class="highlight"><pre><span></span>fallocate -l <span class="o">[</span>length<span class="o">]</span> <span class="o">[</span>filename<span class="o">]</span>
 </pre></div>
             </div>
@@ -132,7 +132,7 @@ really want to <em>allocate</em> the space, it's not the best one.</p>
                     <span class="twitter"><a target="_blank" rel="nofollow"
                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
                                              title="Twitter"
-                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&text=Create dummy file in Linux&via=sound_lake">
+                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&text=Create dummy file in Linux&via=sound_lake">
                         <i class="fab fa-twitter fa-2x"></i></a></span>
 
                     <span class="gplus"><a target="_blank" title="Google +"
@@ -143,17 +143,17 @@ really want to <em>allocate</em> the space, it's not the best one.</p>
 
                     <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
                                               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
-                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&t=Create dummy file in Linux">
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&t=Create dummy file in Linux">
                         <i class="fab fa-facebook fa-2x"></i></a></span>
 
                     <a target="_blank" title="Linkedin"
-                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&title=Create dummy file in Linux"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/&title=Create dummy file in Linux"
                        rel="nofollow"
                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
                         <i class="fab fa-linkedin fa-2x"></i></a></span>
 
                     <span class="mail"><a
-                            href="mailto:?subject=Create dummy file in Linux&amp;body=Viens découvrir un article à propos de [Create dummy file in Linux] sur le site de soundlake. https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/"
+                            href="mailto:?subject=Create dummy file in Linux&amp;body=Viens découvrir un article à propos de [Create dummy file in Linux] sur le site de soundlake. https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/"
                             title="Share by Email" target="_blank">
                         <i class="fas fa-envelope fa-2x"></i></a></span>
                 </div>

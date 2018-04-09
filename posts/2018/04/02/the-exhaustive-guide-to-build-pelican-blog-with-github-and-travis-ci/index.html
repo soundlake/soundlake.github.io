@@ -59,7 +59,7 @@
                 <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
 
                 <li><a class="nav__link" href="https://soundlake.net/pages/about/">About</a></li>
-                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short Resume</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short&nbsp;Resume</a></li>
 
         </ul>
     </nav>
@@ -93,81 +93,79 @@
     <section id="content">
         <article>
             <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2018/04/02/the-exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci/" rel="bookmark"
-                                                  title="Permalink to The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI">The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI</a></h2>
+                                                  title="Permalink to The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI">The Exhaustive Guide to Build Pelican Blog with Github and Travis-<span class="caps">CI</span></a></h2>
             <div class="entry-content blog-post">
                 <h3>Introduction</h3>
-<p>I'm writing this mostly for archiving what I've done for setting up this blog.</p>
-<p>The internet is very big water, and you can whatever you want, but I couldn't
-find a single document that explain everything.</p>
+<p>I&#8217;m writing this mostly for archiving what I&#8217;ve done for setting up this&nbsp;blog.</p>
+<p>The internet is very big water, and you can whatever you want, but I couldn&#8217;t
+find a single document that explain&nbsp;everything.</p>
 <p>I know. In this software world, you can never <em>explain everything</em>. But I
-wanted a bit more kind and careful document to show me the walkthrough.</p>
-<p>The followings are the tech that I've used for setting up my new blog.</p>
-<h3>Setup in Local</h3>
-<p>Firstly, I've checked with <a href="https://blog.getpelican.com">Pelican</a>. There are many options, and actually
+wanted a bit more kind and careful document to show me the&nbsp;walkthrough.</p>
+<p>The followings are the tech that I&#8217;ve used for setting up my new&nbsp;blog.</p>
+<h3>Setup in&nbsp;Local</h3>
+<p>Firstly, I&#8217;ve checked with <a href="https://blog.getpelican.com">Pelican</a>. There are many options, and actually
 <a href="https://github.com">Github</a> seems easy with <a href="https://jekyllrb.com">Jekyll</a>, but <a href="http://www.ruby-lang.org">Ruby</a> is not my best thing, while
-I'm a kind of fond of <a href="https://www.python.org">Python</a>.</p>
+I&#8217;m a kind of fond of <a href="https://www.python.org">Python</a>.</p>
 <p>To use <a href="https://blog.getpelican.com">Pelican</a>, you can just install it with <a href="https://pip.pypa.io">pip</a> it, but there are a
-somewhat downside of <a href="https://www.python.org">Python</a>, which is <a href="https://pip.pypa.io">pip</a> installs those dependencies
-globally.</p>
+somewhat downside of <a href="https://www.python.org">Python</a>, which is <a href="https://pip.pypa.io">pip</a> installs those dependencies&nbsp;globally.</p>
 <p>If you are familiar with <a href="https://www.linux.org">Linux</a> system, it looks rather natural and normal for
 you, but if you are one of the modern developers who likes JavaScript eco
-system like <a href="https://www.npmjs.com">npm</a>, then installing dependency only globally might look wierd.</p>
+system like <a href="https://www.npmjs.com">npm</a>, then installing dependency only globally might look&nbsp;wierd.</p>
 <h4>VirtualEnv</h4>
 <p>Here comes <a href="https://virtualenv.pypa.io">VirtualEnv</a>. This tricks the system, and make the dependency able
-to be installed locally avoiding to corrupt the whole system.</p>
-<h5>Install VirtualEnv</h5>
+to be installed locally avoiding to corrupt the whole&nbsp;system.</p>
+<h5>Install&nbsp;VirtualEnv</h5>
 <p>Fortunately, <a href="https://www.debian.org">Debian</a> team did a good job with keeping the packages up-to-date.
-You can simply install <a href="https://virtualenv.pypa.io">VirtualEnv</a> by</p>
+You can simply install <a href="https://virtualenv.pypa.io">VirtualEnv</a>&nbsp;by</p>
 <div class="highlight"><pre><span></span>sudo apt-get install python-virtualenv
 </pre></div>
 
 
-<h5>Using VirtualEnv</h5>
-<p>Now, let's choose a directory, and make it the virtual environment of your
-python system.</p>
+<h5>Using&nbsp;VirtualEnv</h5>
+<p>Now, let&#8217;s choose a directory, and make it the virtual environment of your
+python&nbsp;system.</p>
 <div class="highlight"><pre><span></span>virutalenv path/to/the/directory
 </pre></div>
 
 
-<p>To enable the virtual environment, you should just run following command.</p>
+<p>To enable the virtual environment, you should just run following&nbsp;command.</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> path/to/the/directory
 <span class="nb">source</span> bin/activate
 </pre></div>
 
 
-<p>[<code>source</code>] is <a href="https://www.gnu.org/software/bash">bash</a>'s built-in command. According to the document, that I
-linked, it does the following.</p>
+<p><a href="https://ss64.com/bash/source.html"><code>source</code></a> is <a href="https://www.gnu.org/software/bash">bash</a>&#8216;s built-in command.
+According to the document, that I linked, it does the&nbsp;following.</p>
 <blockquote>
-<p>Read and execute commands from the filename argument in the current shell
-context.</p>
+<p>Read and execute commands from the filename argument in the current shell&nbsp;context.</p>
 </blockquote>
-<p>So, <code>source bin/activate</code> command read the file, and alter the <a href="https://www.gnu.org/software/bash">bash</a>'s
-environment, and makes you can run executable in the virtual environment.</p>
-<p>That's why deactivating this virtual environment is so easy.</p>
+<p>So, <code>source bin/activate</code> command read the file, and alter the <a href="https://www.gnu.org/software/bash">bash</a>&#8216;s
+environment, and makes you can run executable in the virtual&nbsp;environment.</p>
+<p>That&#8217;s why deactivating this virtual environment is so&nbsp;easy.</p>
 <div class="highlight"><pre><span></span>deactivate
 </pre></div>
 
 
-<p>Becuase this <code>deactivate</code> is already in your <code>PATH</code>, although it won't be after
-running this.</p>
+<p>Becuase this <code>deactivate</code> is already in your <code>PATH</code>, although it won&#8217;t be after
+running&nbsp;this.</p>
 <h4>Pelican</h4>
-<h5>Install Pelican</h5>
-<p>After I activated the virtual environment, I've created a file called
-<code>requirements.txt</code>. It isn't necessarilly named like that, but it's on <a href="https://pip.pypa.io">pip</a>'s
+<h5>Install&nbsp;Pelican</h5>
+<p>After I activated the virtual environment, I&#8217;ve created a file called
+<code>requirements.txt</code>. It isn&#8217;t necessarilly named like that, but it&#8217;s on <a href="https://pip.pypa.io">pip</a>&#8216;s
 <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">document</a>, and
-commonly used for <a href="https://pip.pypa.io">pip</a>'s dependency list.</p>
+commonly used for <a href="https://pip.pypa.io">pip</a>&#8216;s dependency&nbsp;list.</p>
 <p>This is the content of the file. This is simple file, and each line has each
-<a href="https://www.python.org">Python</a> module name.</p>
+<a href="https://www.python.org">Python</a> module&nbsp;name.</p>
 <div class="highlight"><pre><span></span>pelican
 markdown
 </pre></div>
 
 
-<p><a href="https://blog.getpelican.com">Pelican</a> supports <a href="http://docutils.sourceforge.net/rst.html">reStructedText</a> by default, but it doesn't <a href="https://daringfireball.net/projects/markdown">Markdown</a>. I
+<p><a href="https://blog.getpelican.com">Pelican</a> supports <a href="http://docutils.sourceforge.net/rst.html">reStructedText</a> by default, but it doesn&#8217;t <a href="https://daringfireball.net/projects/markdown">Markdown</a>. I
 personally prefer <a href="https://daringfireball.net/projects/markdown">Markdown</a> to <a href="http://docutils.sourceforge.net/rst.html">reStructedText</a>.</p>
-<h5>Using Pelican</h5>
+<h5>Using&nbsp;Pelican</h5>
 <p>The next things to do is starting your <a href="https://blog.getpelican.com">Pelican</a> instance. The developers of
-<a href="https://blog.getpelican.com">Pelican</a> are kind enough to provide you a easy-bootstraping command.</p>
+<a href="https://blog.getpelican.com">Pelican</a> are kind enough to provide you a easy-bootstraping&nbsp;command.</p>
 <div class="highlight"><pre><span></span>pelican-quickstart
 </pre></div>
 
@@ -176,52 +174,51 @@ personally prefer <a href="https://daringfireball.net/projects/markdown">Markdow
 <code>develop_server.sh</code>, <code>pelicanconf.py</code>, <code>publishconf.py</code>. With first two files,
 you have a bit of automation for building your <a href="https://blog.getpelican.com">Pelican</a> site locally during
 developing. With the other two files, you can configure your <a href="https://blog.getpelican.com">Pelican</a> site as
-you want.</p>
+you&nbsp;want.</p>
 <div class="highlight"><pre><span></span>make devserver
 </pre></div>
 
 
 <p>This will turn on the watcher on <code>content</code> directory, <code>themes</code> directory, and
 the configuration files including two that I mentioned above. Also, it turns on
-the HTTP server which listens 8000 port by default.</p>
-<h5>Choosing a Theme</h5>
+the <span class="caps">HTTP</span> server which listens 8000 port by&nbsp;default.</p>
+<h5>Choosing a&nbsp;Theme</h5>
 <p>From <a href="http://www.pelicanthemes.com">here</a>, you can check various themes and its
-screenshots. IIRC, all of them are hosted in <a href="https://github.com">Github</a>, and you can clone the
+screenshots. <span class="caps">IIRC</span>, all of them are hosted in <a href="https://github.com">Github</a>, and you can clone the
 repository of the theme into your <code>themes</code> directory. After set <code>THEME</code> variable
-to the path to the directory you've cloned, then it's good to go.</p>
+to the path to the directory you&#8217;ve cloned, then it&#8217;s good to&nbsp;go.</p>
 <p>There might be a few little changes necessary, like color, some configuration
-variable, or even the layout of the theme.</p>
-<h3>Continuous Integration</h3>
-<p><a href="https://travis-ci.org">Travis CI</a> is one of popular CI service. And it's well integrated with
-<a href="https://github.com">Github</a>. You can register to <a href="https://travis-ci.org">Travis CI</a> with <a href="https://github.com">Github</a> account.</p>
-<p>With <a href="https://travis-ci.org">Travis CI</a>, you can push your content and source into <code>master</code> branch of
-your <a href="https://github.com">Github</a>, and <a href="https://travis-ci.org">Travis CI</a> will do the left, including building the source
+variable, or even the layout of the&nbsp;theme.</p>
+<h3>Continuous&nbsp;Integration</h3>
+<p><a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> is one of popular <span class="caps">CI</span> service. And it&#8217;s well integrated with
+<a href="https://github.com">Github</a>. You can register to <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> with <a href="https://github.com">Github</a>&nbsp;account.</p>
+<p>With <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a>, you can push your content and source into <code>master</code> branch of
+your <a href="https://github.com">Github</a>, and <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> will do the left, including building the source
 and push to <code>gh-pages</code> branch.</p>
-<h4>Github Repository</h4>
-<p>Here's a tip for the <a href="https://github.com">Github</a> repository you'll make. Don't use
-<code>username.github.io</code>. That repository is designed for using <a href="https://github.com">Github</a>'s default
-making web site system, so using <code>gh-pages</code> is simply not possible with this
-repository.</p>
-<p>Let's make a new repository. You don't need to add any additional file, because
-we are not going to clone this repository. Rather, we'll set it to the remote
-repository of the local repository.</p>
-<p>If you haven't initialized your local repository, just do this.</p>
+<h4>Github&nbsp;Repository</h4>
+<p>Here&#8217;s a tip for the <a href="https://github.com">Github</a> repository you&#8217;ll make. Don&#8217;t use
+<code>username.github.io</code>. That repository is designed for using <a href="https://github.com">Github</a>&#8216;s default
+making web site system, so using <code>gh-pages</code> is simply not possible with this&nbsp;repository.</p>
+<p>Let&#8217;s make a new repository. You don&#8217;t need to add any additional file, because
+we are not going to clone this repository. Rather, we&#8217;ll set it to the remote
+repository of the local&nbsp;repository.</p>
+<p>If you haven&#8217;t initialized your local repository, just do&nbsp;this.</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> path/to/the/directory
 git init
 </pre></div>
 
 
-<p>Then with this command, set the remote repository.</p>
+<p>Then with this command, set the remote&nbsp;repository.</p>
 <div class="highlight"><pre><span></span>git remote add origin url_of_the_github_repo
 </pre></div>
 
 
-<p>Now, you can push to the <a href="https://github.com">Github</a> repository, you've created.</p>
+<p>Now, you can push to the <a href="https://github.com">Github</a> repository, you&#8217;ve&nbsp;created.</p>
 <h4>Travis</h4>
-<p>Once you've created <a href="https://github.com">Github</a>'s public repository, you can find it in <a href="https://travis-ci.org">Travis CI</a>
-dashboard. It's on <code>https://travis-ci.org/profile/{github_username}</code>. In this
-page, you can activate the continuous integration by your <a href="https://github.com">Github</a> repository.</p>
-<p>Now, you need to create <code>.travis.yml</code> file in your repository.</p>
+<p>Once you&#8217;ve created <a href="https://github.com">Github</a>&#8216;s public repository, you can find it in <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a>
+dashboard. It&#8217;s on <code>https://travis-ci.org/profile/{Github Username}</code>. In this
+page, you can activate the continuous integration by your <a href="https://github.com">Github</a>&nbsp;repository.</p>
+<p>Now, you need to create <code>.travis.yml</code> file in your&nbsp;repository.</p>
 <div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">language</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 <span class="l l-Scalar l-Scalar-Plain">python</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;3.6&#39;</span>
@@ -246,23 +243,23 @@ page, you can activate the continuous integration by your <a href="https://githu
 
 <p>This is my configuration file. My configuration has mainly two part. The former
 is to build the <a href="https://blog.getpelican.com">Pelican</a> site, and the latter is to push to <code>gh-pages</code> of the
-<a href="https://github.com">Github</a> repository.</p>
+<a href="https://github.com">Github</a>&nbsp;repository.</p>
 <p>Note that there is <code>$GITHUB_TOKEN</code>.</p>
-<h4>Github Token</h4>
-<p>My configuration of <a href="https://travis-ci.org">Travis CI</a> pushes to my repository. To make it possible,
-we need to tell <a href="https://github.com">Github</a> to allow <a href="https://travis-ci.org">Travis CI</a> to do that. This is why the token
-is required.</p>
-<p><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">Here</a>'s
-how to create the token. When you create the token, don't forget to check
-<code>public_repo</code> scope. That's the scope that allows <a href="https://travis-ci.org">Travis CI</a> to push a new
-commits to your <a href="https://github.com">Github</a> repository.</p>
-<p>After you create the token, copy it and go to <a href="https://travis-ci.org">Travis CI</a>'s repository settings
-page. The url would be <code>https://travis-ci.org/{username}/{repo_name}/settings</code>.
+<h4>Github&nbsp;Token</h4>
+<p>My configuration of <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> pushes to my repository. To make it possible,
+we need to tell <a href="https://github.com">Github</a> to allow <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> to do that. This is why the token
+is&nbsp;required.</p>
+<p><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">Here</a>&#8216;s
+how to create the token. When you create the token, don&#8217;t forget to check
+<code>public_repo</code> scope. That&#8217;s the scope that allows <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> to push a new
+commits to your <a href="https://github.com">Github</a>&nbsp;repository.</p>
+<p>After you create the token, copy it and go to <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a>&#8216;s repository settings
+page. The url would be <code>https://travis-ci.org/{username}/{repo name}/settings</code>.
 In that page, you can configure the environment variables. Creat a new variable
-with <code>GITHUB_TOKEN</code> for the name and the copied token for the value.</p>
-<p>Now, if you push the <code>master</code> branch, then <a href="https://travis-ci.org">Travis CI</a> will be noticed. Then,
-it will build, make a new commit, and push to <code>gh-pages</code> branch. It's the time
-to check out <code>https://{username}.github.io/{repo_name}</code></p>
+with <code>GITHUB_TOKEN</code> for the name and the copied token for the&nbsp;value.</p>
+<p>Now, if you push the <code>master</code> branch, then <a href="https://travis-ci.org">Travis <span class="caps">CI</span></a> will be noticed. Then,
+it will build, make a new commit, and push to <code>gh-pages</code> branch. It&#8217;s the time
+to check out <code>https://{username}.github.io/{repo name}</code></p>
             </div>
             <div class="post_list">
                 <span>By </span>

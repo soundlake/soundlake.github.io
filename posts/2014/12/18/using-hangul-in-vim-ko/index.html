@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <!-- Site Meta Data -->
-        <title>VIM에서 한글 사용하기</title>
+        <title>VIM에서 한글 사용하기</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="soundlake">
@@ -37,12 +37,12 @@
 
     <meta name="twitter:creator" content="sound_lake">
     <meta name="twitter:url" content="https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/">
-    <meta name="twitter:title" content="soundlake ~ VIM에서 한글 사용하기">
-    <meta name="twitter:description" content="VIM의 위대함을 설파하는 건 이미 많은 사람이 했고. 문제는 한글을 사용하기가 좀 불편하다는 거다. 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만, 문제는 normal mode에서 명령어 입력을 해야 하는데, insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하니, 한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한 일이다. 역시 …">
+    <meta name="twitter:title" content="soundlake ~ VIM에서 한글 사용하기">
+    <meta name="twitter:description" content="VIM의 위대함을 설파하는 건 이미 많은 사람이 했고. 문제는 한글을 사용하기가 좀 불편하다는 거다. 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만, 문제는 normal mode에서 명령어 입력을 해야 하는데, insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하니, 한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한 일이다. 역시 …">
 
     <!-- Facebook Meta Data -->
-    <meta property="og:title" content="soundlake ~ VIM에서 한글 사용하기"/>
-    <meta property="og:description" content="VIM의 위대함을 설파하는 건 이미 많은 사람이 했고. 문제는 한글을 사용하기가 좀 불편하다는 거다. 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만, 문제는 normal mode에서 명령어 입력을 해야 하는데, insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하니, 한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한 일이다. 역시 …"/>
+    <meta property="og:title" content="soundlake ~ VIM에서 한글 사용하기"/>
+    <meta property="og:description" content="VIM의 위대함을 설파하는 건 이미 많은 사람이 했고. 문제는 한글을 사용하기가 좀 불편하다는 거다. 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만, 문제는 normal mode에서 명령어 입력을 해야 하는데, insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하니, 한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한 일이다. 역시 …"/>
     <meta property="og:image" content=""/>
 </head>
 
@@ -59,7 +59,7 @@
                 <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
 
                 <li><a class="nav__link" href="https://soundlake.net/pages/about/">About</a></li>
-                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short Resume</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume/">Short&nbsp;Resume</a></li>
 
         </ul>
     </nav>
@@ -93,30 +93,30 @@
     <section id="content">
         <article>
             <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/" rel="bookmark"
-                                                  title="Permalink to VIM에서 한글 사용하기">VIM에서 한글 사용하기</a></h2>
+                                                  title="Permalink to VIM에서 한글 사용하기">VIM에서 한글&nbsp;사용하기</a></h2>
             <div class="entry-content blog-post">
-                <p><a href="http://www.vim.org">VIM</a>의 위대함을 설파하는 건 이미 많은 사람이 했고.
+                <p><a href="http://www.vim.org"><span class="caps">VIM</span></a>의 위대함을 설파하는 건 이미 많은 사람이 했고.
 문제는 한글을 사용하기가 좀 불편하다는 거다.
 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만,
 문제는 normal mode에서 명령어 입력을 해야 하는데,
 insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하니,
-한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한 일이다.</p>
+한영 변경을 Cmd+Space로 하는 맥유저로서는 깝깝한&nbsp;일이다.</p>
 <p>역시 해법은 있었다. <a href="http://www.myip.co.kr/mbbs/tip/139818">원문참조</a>
-모두 세 가지 방법이 있었고, 역시 마지막 방법이 제일 좋은 듯 하다.</p>
-<h4>1. map을 이용해 ㅓ를 j에 매핑시키는 방식이다.</h4>
+모두 세 가지 방법이 있었고, 역시 마지막 방법이 제일 좋은 듯&nbsp;하다.</p>
+<h4>1. map을 이용해 ㅓ를 j에 매핑시키는&nbsp;방식이다.</h4>
 <ul>
-<li>가장 기초적인 방법</li>
-<li>두벌식에서 세벌식 갈아타면, 다 바꿔야 한다. -_-..</li>
+<li>가장 기초적인&nbsp;방법</li>
+<li>두벌식에서 세벌식 갈아타면, 다 바꿔야 한다.&nbsp;-_-..</li>
 </ul>
-<h4>2. inoremap을 이용해 insert mode에서 normal mode로 바뀔 때, 자동으로 영문으로 쓰게 하는 거다.</h4>
+<h4>2. inoremap을 이용해 insert mode에서 normal mode로 바뀔 때, 자동으로 영문으로 쓰게 하는&nbsp;거다.</h4>
 <div class="highlight"><pre><span></span><span class="nb">inoremap</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">set</span> <span class="nb">iminsert</span><span class="p">=</span><span class="m">0</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre></div>
 
 
 <ul>
-<li>환경에 따라 동작하지 않을 수도 있다.</li>
+<li>환경에 따라 동작하지 않을 수도&nbsp;있다.</li>
 </ul>
-<h4>3. normal mode에서 환경 input method를 무시하고 키값을 입력받는 거다.</h4>
+<h4>3. normal mode에서 환경 input method를 무시하고 키값을 입력받는&nbsp;거다.</h4>
 <div class="highlight"><pre><span></span><span class="nb">inoremap</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">set</span> <span class="nb">imdisable</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 <span class="nb">nnoremap</span> <span class="k">i</span> :<span class="k">set</span> <span class="nb">noimd</span><span class="p">&lt;</span>CR<span class="p">&gt;</span><span class="k">i</span>
 <span class="nb">nnoremap</span> I :<span class="k">set</span> <span class="nb">noimd</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>I
@@ -128,25 +128,25 @@ insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하
 
 
 <ul>
-<li>환경 불문하고 잘 되는 방법.</li>
+<li>환경 불문하고 잘 되는&nbsp;방법.</li>
 </ul>
 <p>수정. 2014-12-21
 뭔가 이상하게 작동했다. 설정을 하고 나서, <code>input mode</code>에서 <code>normal mode</code>로 나오면,
 분명히 잘 작동하는데, 문제는 <code>normal mode</code>에서 <code>input mode</code>로 들어갈 때였다.
-원래대로라면 분명히 <code>input mode</code>에서의 IM 상태를 저장해놓았다가,
+원래대로라면 분명히 <code>input mode</code>에서의 <span class="caps">IM</span> 상태를 저장해놓았다가,
 <code>normal mode</code>에서 <code>input mode</code>로 들어가면 저장된 상태가 나와야 하는데,
 이건 들어갈 때마다 한글 키가 작동되는 거다.
 물론 블로그 쓸 때처럼 한글을 많이 쓸 때도 있지만,
 코딩을 할 때는 한글보다는 영문을 많이 쓸테니,
 이것도 불편한 노릇이었다. 그래서 다시 찾아보니,
 <a href="http://vim.1045645.n5.nabble.com/Macvim-doesn-t-work-properly-with-chinese-input-method-td4340958.html">어느 중국인도 불편함을 토로하고 있더라</a>. <a href="http://seorenn.blogspot.be/2011/04/vim-vim-esc.html">어느 한국인도 찾아놓았더라</a>.
-사실 멋진 건, MacVim 개발자들이 이미 다 구현해놓았다는 것. 위에서처럽 복잡한 설정 없이,</p>
+사실 멋진 건, MacVim 개발자들이 이미 다 구현해놓았다는 것. 위에서처럽 복잡한 설정&nbsp;없이,</p>
 <div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">noimd</span>
 </pre></div>
 
 
-<p>이거 하나로 해결. -_-.</p>
-<p>요즘 새삼 느끼는 거지만, 등잔 밑이 어둡다. 파랑새는 우리집에 있었다.</p>
+<p>이거 하나로 해결.&nbsp;-_-.</p>
+<p>요즘 새삼 느끼는 거지만, 등잔 밑이 어둡다. 파랑새는 우리집에&nbsp;있었다.</p>
             </div>
             <div class="post_list">
                 <span>By </span>
@@ -164,7 +164,7 @@ insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하
                     <span class="twitter"><a target="_blank" rel="nofollow"
                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
                                              title="Twitter"
-                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&text=VIM에서 한글 사용하기&via=sound_lake">
+                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&text=VIM에서 한글 사용하기&via=sound_lake">
                         <i class="fab fa-twitter fa-2x"></i></a></span>
 
                     <span class="gplus"><a target="_blank" title="Google +"
@@ -175,17 +175,17 @@ insert mode와 normal mode를 움직일 때마다 한영 변경을 해줘야 하
 
                     <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
                                               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
-                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&t=VIM에서 한글 사용하기">
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&t=VIM에서 한글 사용하기">
                         <i class="fab fa-facebook fa-2x"></i></a></span>
 
                     <a target="_blank" title="Linkedin"
-                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&title=VIM에서 한글 사용하기"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/&title=VIM에서 한글 사용하기"
                        rel="nofollow"
                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
                         <i class="fab fa-linkedin fa-2x"></i></a></span>
 
                     <span class="mail"><a
-                            href="mailto:?subject=VIM에서 한글 사용하기&amp;body=Viens découvrir un article à propos de [VIM에서 한글 사용하기] sur le site de soundlake. https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/"
+                            href="mailto:?subject=VIM에서 한글 사용하기&amp;body=Viens découvrir un article à propos de [VIM에서 한글 사용하기] sur le site de soundlake. https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/"
                             title="Share by Email" target="_blank">
                         <i class="fas fa-envelope fa-2x"></i></a></span>
                 </div>
