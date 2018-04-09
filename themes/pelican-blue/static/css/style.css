@@ -105,6 +105,11 @@ a:active { color:#6a9fb5; text-decoration:none; }
 a:hover { text-decoration: underline; }
 
 /* Code */
+code {
+  padding: 0 5px 2px 5px;
+  border-radius: 5px;
+  background: #eee;
+}
 .highlight pre {
   font-size: 14px;
   overflow: auto;
