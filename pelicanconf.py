@@ -40,7 +40,7 @@ SOCIAL = (('github', 'https://github.com/soundlake'),
           ('telegram', 'https://t.me/soundlake'),
           ('soundcloud', 'https://soundcloud.com/soundlake'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 STATIC_PATHS = [
     'static',
