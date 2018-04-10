@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Sync Date and Time in Debian</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="soundlake">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="soundlake">
+        <meta itemprop="image" content="">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="https://soundlake.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="soundlake ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="sound_lake">
+        <meta name="twitter:image" content="">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+        <!-- Font Awesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+    <meta name="twitter:creator" content="sound_lake">
+    <meta name="twitter:url" content="https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html">
+    <meta name="twitter:title" content="soundlake ~ Sync Date and Time in Debian">
+    <meta name="twitter:description" content="Using ntp, you can easily sync your Debian machine’s date ane time">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="soundlake ~ Sync Date and Time in Debian"/>
+    <meta property="og:description" content="Using ntp, you can easily sync your Debian machine’s date ane time"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a href="https://soundlake.net/">soundlake</a></h1>
+        <p>Developer / Programmer / Musician</p>
+    <br>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
+
+                <li><a class="nav__link" href="https://soundlake.net/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume.html">Short&nbsp;Resume</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+<a href="https://github.com/soundlake" target="_blank"><i class="fab fa-github fa-lg"></i></a><a href="https://bitbucket.org/soundlake" target="_blank"><i class="fab fa-bitbucket fa-lg"></i></a><a href="https://gitlab.com/soundlake" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a><a href="https://stackoverflow.com/users/4276533/soundlake" target="_blank"><i class="fab fa-stack-overflow fa-lg"></i></a><a href="https://twitter.com/sound_lake" target="_blank"><i class="fab fa-twitter fa-lg"></i></a><a href="https://sound-lake.tumblr.com" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a><a href="https://t.me/soundlake" target="_blank"><i class="fab fa-telegram fa-lg"></i></a><a href="https://soundcloud.com/soundlake" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>            <a href="https://soundlake.net/feeds/all.atom.xml" rel="alternate">
+                <i class="fas fa-rss fa-lg"></i></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li class="active"><a
+                        href="https://soundlake.net/category/dev.html">Dev</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://getpelican.com">Pelican</a></li>
+                <li><a href="http://python.org">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                <li><a href="https://daringfireball.net/projects/markdown">Markdown</a></li>
+                <li><a href="https://python-markdown.github.io">Python-Markdown</a></li>
+                <li><a href="https://github.com/Parbhat/pelican-blue">pelican-blue</a></li>
+                <li><a href="https://github.com/soundlake/soundlake.net">source code</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content">
+        <article>
+            <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html" rel="bookmark"
+                                                  title="Permalink to Sync Date and Time in Debian">Sync Date and Time in&nbsp;Debian</a></h2>
+            <div class="entry-content blog-post">
+                <p>I thought I only need <span class="caps">NTP</span> client to synchronize the date and time of my linux
+machine. But apparently, <code>ntpdate</code> runs once, and <a href="https://www.debian.org">Debian</a> &#8220;expects&#8221; the user
+to install <code>ntp</code> according to <a href="https://unix.stackexchange.com/questions/137266/how-to-keep-debian-internal-clock-synchronized-with-ntp-servers/137269#137269">this stack exchange
+answer</a>.</p>
+<p>Installing it is just easy, especially if you&#8217;re familiar with <a href="https://www.debian.org">Debian</a> or
+<a href="https://www.ubuntu.com">Ubuntu</a>.</p>
+<div class="highlight"><pre><span></span>sudo apt-get install ntp
+</pre></div>
+
+
+<p>After the installation, you can check if it&#8217;s&nbsp;running.</p>
+<div class="highlight"><pre><span></span>sudo systemctl status ntp
+</pre></div>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="https://soundlake.net/author/soundlake">@soundlake</a>
+                <span> in </span>
+                <span class="post_category"><a href="https://soundlake.net/category/dev.html" rel="bookmark"
+                                               title="Permalink to Dev">[ Dev ]</a></span>
+                <span class="post_date">Wed 11 April 2018</span>
+                <div><span>Tags : </span>
+                            <span><a href="https://soundlake.net/tag/linux.html">#linux, </a></span>
+                            <span><a href="https://soundlake.net/tag/debian.html">#debian, </a></span>
+                            <span><a href="https://soundlake.net/tag/ntp.html">#ntp, </a></span>
+                </div>
+
+                <div class="social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html&text=Sync Date and Time in Debian&via=sound_lake">
+                        <i class="fab fa-twitter fa-2x"></i></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-google-plus fa-2x"></i></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html&t=Sync Date and Time in Debian">
+                        <i class="fab fa-facebook fa-2x"></i></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html&title=Sync Date and Time in Debian"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-linkedin fa-2x"></i></a></span>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Sync Date and Time in Debian&amp;body=Viens découvrir un article à propos de [Sync Date and Time in Debian] sur le site de soundlake. https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html"
+                            title="Share by Email" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i></a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments !</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "posts/2018/04/11/sync-date-and-time-in-debian.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://https-soundlake-net.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

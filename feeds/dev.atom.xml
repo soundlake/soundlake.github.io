@@ -1,5 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake - Dev</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/dev.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-04-08T02:00:00+02:00</updated><entry><title>The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI</title><link href="https://soundlake.net/posts/2018/04/02/the-exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci/" rel="alternate"></link><published>2018-04-02T10:28:00+02:00</published><updated>2018-04-02T21:51:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-02:/posts/2018/04/02/the-exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci/</id><summary type="html">&lt;p&gt;A single document for the walkthrough setup your static page blog with Pelican on Github and Travis-&lt;span class="caps"&gt;CI&lt;/span&gt;.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake - Dev</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/dev.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-04-11T12:05:00+02:00</updated><entry><title>Sync Date and Time in Debian</title><link href="https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html" rel="alternate"></link><published>2018-04-11T12:05:00+02:00</published><updated>2018-04-11T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-11:/posts/2018/04/11/sync-date-and-time-in-debian.html</id><summary type="html">&lt;p&gt;Using ntp, you can easily sync your Debian machine&amp;#8217;s date ane&amp;nbsp;time&lt;/p&gt;</summary><content type="html">&lt;p&gt;I thought I only need &lt;span class="caps"&gt;NTP&lt;/span&gt; client to synchronize the date and time of my linux
+machine. But apparently, &lt;code&gt;ntpdate&lt;/code&gt; runs once, and &lt;a href="https://www.debian.org"&gt;Debian&lt;/a&gt; &amp;#8220;expects&amp;#8221; the user
+to install &lt;code&gt;ntp&lt;/code&gt; according to &lt;a href="https://unix.stackexchange.com/questions/137266/how-to-keep-debian-internal-clock-synchronized-with-ntp-servers/137269#137269"&gt;this stack exchange
+answer&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Installing it is just easy, especially if you&amp;#8217;re familiar with &lt;a href="https://www.debian.org"&gt;Debian&lt;/a&gt; or
+&lt;a href="https://www.ubuntu.com"&gt;Ubuntu&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install ntp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After the installation, you can check if it&amp;#8217;s&amp;nbsp;running.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl status ntp
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="debian"></category><category term="ntp"></category></entry><entry><title>My First Accepted Github Pull Request</title><link href="https://soundlake.net/posts/2018/04/10/my-first-accepted-github-pull-request.html" rel="alternate"></link><published>2018-04-10T11:05:00+02:00</published><updated>2018-04-10T11:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-10:/posts/2018/04/10/my-first-accepted-github-pull-request.html</id><summary type="html">&lt;p&gt;I&amp;#8217;ve requested my first Github pull request&amp;nbsp;ever.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last night, I&amp;#8217;ve applied &lt;a href="https://pypi.python.org/pypi/typogrify"&gt;Typogrify&lt;/a&gt; to this blog. It&amp;#8217;s a default plugin in
+&lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But I found strange result. The title has unnecessary glitch on it. In the
+&lt;a href="https://github.com/getpelican/pelican/blob/master/pelican/readers.py#L603"&gt;pelican source&lt;/a&gt;,
+I could find that &lt;a href="https://pypi.python.org/pypi/typogrify"&gt;Typogrify&lt;/a&gt; is adding the tag intentionally. Then, the
+template should be remove that. &lt;a href="http://jinja.pocoo.org"&gt;Jinja2&lt;/a&gt; has
+&lt;a href="http://jinja.pocoo.org/docs/2.10/templates/#striptags"&gt;&lt;code&gt;striptags&lt;/code&gt;&lt;/a&gt;&amp;nbsp;filter.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve tested the following&amp;nbsp;code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typogrify.filters&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;typogrify&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;jinja2.filters&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;do_striptags&lt;/span&gt;
+
+&lt;span class="n"&gt;TEST_STR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Hello WORLD&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_STR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Hello WORLD&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;typogrify&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_STR&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# Hello &amp;lt;span class=&amp;quot;caps&amp;quot;&amp;gt;WORLD&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;do_striptags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;typogrify&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_STR&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="c1"&gt;# Hello WORLD&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Each libraries work as expected. Then it was the time to check the template
+files. And apparently, in &lt;code&gt;aritcle.html&lt;/code&gt;, &lt;code&gt;striptags&lt;/code&gt; filter wasn&amp;#8217;t applied to
+&lt;code&gt;article.title&lt;/code&gt; variable.&lt;/p&gt;
+&lt;p&gt;I forked &lt;a href="https://github.com/Parbhat/pelican-blue"&gt;pelican-blue&lt;/a&gt; template source, and cloned it to my local direcotyr,
+and created a commit, and pushed it into &lt;a href="https://github.com/soundlake/pelican-blue"&gt;my cloned repo&lt;/a&gt;, and created &lt;a href="https://github.com/Parbhat/pelican-blue/pull/14"&gt;a pull
+request&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And this morning, it&amp;#8217;s&amp;nbsp;merged!&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve reported some issues on some open source project, but this is the first
+time that my code is included in the existing&amp;nbsp;project.&lt;/p&gt;</content><category term="git"></category><category term="gitlab"></category><category term="development"></category></entry><entry><title>Migrating the git remote repo from single to multiple</title><link href="https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html" rel="alternate"></link><published>2018-04-09T20:05:00+02:00</published><updated>2018-04-09T22:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-09:/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html</id><summary type="html">&lt;p&gt;A story of migrating git repo, and the advantages of using&amp;nbsp;GitLab.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Personal History on Git Pull&amp;nbsp;Request&lt;/h3&gt;
+&lt;p&gt;I&amp;#8217;ve learned about &lt;a href="https://git-scm.com"&gt;Git&lt;/a&gt; many years ago, and since a few years ago I&amp;#8217;ve been
+using &lt;a href="https://git-scm.com"&gt;Git&lt;/a&gt; actively. But pull request or merge request hasn&amp;#8217;t been my favorite
+thing until a couple of month&amp;nbsp;ago.&lt;/p&gt;
+&lt;h4&gt;Before, at My&amp;nbsp;Work&lt;/h4&gt;
+&lt;p&gt;We were using single remote repository and each developers used their own
+branch name prefix. The work flow goes like&amp;nbsp;&amp;#8230;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Each developer works on their own&amp;nbsp;branch.&lt;/li&gt;
+&lt;li&gt;When the branch is ready, then the developer notify it to the&amp;nbsp;maintainer.&lt;/li&gt;
+&lt;li&gt;The maintainer checks the branch and merges into the main&amp;nbsp;branch.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The biggest downside of this was usually the branches are over populated. It
+made the log of the repo quite confusing. And the result of &lt;code&gt;git branch&lt;/code&gt; always
+exceeded one&amp;nbsp;page.&lt;/p&gt;
+&lt;p&gt;Another thing had to be improved was the logging for merging. Generally, we
+only have one maintainer on our team, and he handled those merge notices from
+each developers, but the procedure was rather obscure and even the notice was
+sometimes forgotten for busy&amp;nbsp;work.&lt;/p&gt;
+&lt;h4&gt;Migration to &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt; with Multiple Personal&amp;nbsp;Repositories&lt;/h4&gt;
+&lt;p&gt;We gradually moved to &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;. Still there are some rumors about the
+difficulty of deploying self-hosted &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;. And we don&amp;#8217;t dare doing such
+risky experiment. My team is still small, and &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;&amp;#8216;s free plan has good
+enough&amp;nbsp;features.&lt;/p&gt;
+&lt;p&gt;These are the details of how to move to &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The maintainer creates the main repo and the&amp;nbsp;group.&lt;/li&gt;
+&lt;li&gt;The developers sign up, join the group, create their own&amp;nbsp;repo.&lt;/li&gt;
+&lt;li&gt;The developers change the remote repo configuration on the local&amp;nbsp;repo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote set-url origin &lt;span class="o"&gt;{&lt;/span&gt;personal remote repo&lt;span class="o"&gt;}&lt;/span&gt;
+git remote add main &lt;span class="o"&gt;{&lt;/span&gt;main remote repo&lt;span class="o"&gt;}&lt;/span&gt;
+git remote set-url --push main DISABLE_PUSH_TO_MAIN &lt;span class="c1"&gt;# This is optional&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol start="4"&gt;&lt;li&gt;Clean up the unnecessary&amp;nbsp;branches&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; &lt;code&gt;DISABLE_PUSH_TO_MAIN&lt;/code&gt; is arbiturarily chosen string. You can set any
+invalid &lt;span class="caps"&gt;URL&lt;/span&gt; for &lt;code&gt;main&lt;/code&gt;&lt;span class="quo"&gt;&amp;#8216;&lt;/span&gt;s push &lt;span class="caps"&gt;URL&lt;/span&gt; for disabling push to the &lt;code&gt;main&lt;/code&gt; repo. If you
+are one of the maintainers, then it&amp;#8217;s not&amp;nbsp;necessary.&lt;/p&gt;
+&lt;h4&gt;Now, at My&amp;nbsp;Work&lt;/h4&gt;
+&lt;p&gt;Now, each developer manages their own repo. And time to time they checkes the
+main repo with &lt;code&gt;git fetch main&lt;/code&gt;. If a pile of commits are ready to be merged,
+then the developer create a merge&amp;nbsp;request.&lt;/p&gt;
+&lt;h4&gt;The Advatages of using this new&amp;nbsp;system&lt;/h4&gt;
+&lt;p&gt;There are some unexpected&amp;nbsp;advatages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can &lt;strong&gt;comment on each diff line&lt;/strong&gt; of code in &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;. This makes the
+  feedback easy and crystal&amp;nbsp;clear.&lt;/li&gt;
+&lt;li&gt;You can configure a repo to &lt;strong&gt;limit the branch to push&lt;/strong&gt;. You can easily
+  protect your main&amp;nbsp;repo.&lt;/li&gt;
+&lt;li&gt;You can use &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;&amp;#8216;s &lt;strong&gt;contiuous integration&lt;/strong&gt; feature. Once it&amp;#8217;s
+  configured, all you need to do is pushing to the remote branch, and the other
+  job is done by automated &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You can set a &lt;strong&gt;flag on the merge request&lt;/strong&gt;. And then the request will be
+  merged automatically after the contiuous integration is done&amp;nbsp;successfully.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yet we&amp;#8217;re discovering the good side of &lt;a href="https://gitlab.com"&gt;GitLab&lt;/a&gt;.&lt;/p&gt;</content><category term="git"></category><category term="gitlab"></category><category term="development"></category></entry><entry><title>The Exhaustive Guide to Build Pelican Blog with Github and Travis-CI</title><link href="https://soundlake.net/posts/2018/04/02/the-exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci.html" rel="alternate"></link><published>2018-04-02T10:28:00+02:00</published><updated>2018-04-02T21:51:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-02:/posts/2018/04/02/the-exhaustive-guide-to-build-pelican-blog-with-github-and-travis-ci.html</id><summary type="html">&lt;p&gt;A single document for the walkthrough setup your static page blog with Pelican on Github and Travis-&lt;span class="caps"&gt;CI&lt;/span&gt;.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;I&amp;#8217;m writing this mostly for archiving what I&amp;#8217;ve done for setting up this&amp;nbsp;blog.&lt;/p&gt;
 &lt;p&gt;The internet is very big water, and you can whatever you want, but I couldn&amp;#8217;t
 find a single document that explain&amp;nbsp;everything.&lt;/p&gt;
@@ -163,7 +259,7 @@ In that page, you can configure the environment variables. Creat a new variable
 with &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; for the name and the copied token for the&amp;nbsp;value.&lt;/p&gt;
 &lt;p&gt;Now, if you push the &lt;code&gt;master&lt;/code&gt; branch, then &lt;a href="https://travis-ci.org"&gt;Travis &lt;span class="caps"&gt;CI&lt;/span&gt;&lt;/a&gt; will be noticed. Then,
 it will build, make a new commit, and push to &lt;code&gt;gh-pages&lt;/code&gt; branch. It&amp;#8217;s the time
-to check out &lt;code&gt;https://{username}.github.io/{repo name}&lt;/code&gt;&lt;/p&gt;</content><category term="github"></category><category term="travis"></category><category term="pelican"></category><category term="python"></category><category term="CI"></category></entry><entry><title>Best Practice to Check Table Information in MySQL</title><link href="https://soundlake.net/posts/2017/01/09/best-practice-to-check-table-information-in-mysql/" rel="alternate"></link><published>2017-01-09T10:00:00+01:00</published><updated>2018-04-03T22:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2017-01-09:/posts/2017/01/09/best-practice-to-check-table-information-in-mysql/</id><summary type="html">&lt;p&gt;There&amp;#8217;s a better way to check the table schema in&amp;nbsp;MySQL.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I usually use &lt;code&gt;DESC&lt;/code&gt; to check the columns of the table,
+to check out &lt;code&gt;https://{username}.github.io/{repo name}&lt;/code&gt;&lt;/p&gt;</content><category term="github"></category><category term="travis"></category><category term="pelican"></category><category term="python"></category><category term="CI"></category></entry><entry><title>Best Practice to Check Table Information in MySQL</title><link href="https://soundlake.net/posts/2017/01/09/best-practice-to-check-table-information-in-mysql.html" rel="alternate"></link><published>2017-01-09T10:00:00+01:00</published><updated>2018-04-03T22:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2017-01-09:/posts/2017/01/09/best-practice-to-check-table-information-in-mysql.html</id><summary type="html">&lt;p&gt;There&amp;#8217;s a better way to check the table schema in&amp;nbsp;MySQL.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I usually use &lt;code&gt;DESC&lt;/code&gt; to check the columns of the table,
 which is similar to &lt;code&gt;EXPLAIN&lt;/code&gt;.
 But it&amp;#8217;s not enough espeicially when I want to check indexes with&amp;nbsp;columns.&lt;/p&gt;
 &lt;p&gt;Recently, I got introduced of &lt;code&gt;SHOW CREATE TABLE&lt;/code&gt;.
@@ -171,7 +267,7 @@ It seems strange, but it shows the &lt;span class="caps"&gt;SQL&lt;/span&gt; for
 The result includes lot&amp;#8217;s of unnecessary lines, and you can clean them with &lt;code&gt;\G&lt;/code&gt; in the end.
 So, if you want to check columns and indexes of the table, you can use the&amp;nbsp;following.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SHOW&lt;/span&gt; &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="MySQL"></category><category term="MariaDB"></category></entry><entry><title>Add Binary Path in PowerShell</title><link href="https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell/" rel="alternate"></link><published>2016-12-28T10:00:00+01:00</published><updated>2018-04-03T21:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-28:/posts/2016/12/28/add-binary-path-in-powershell/</id><summary type="html">&lt;p&gt;Configure your &lt;span class="caps"&gt;PATH&lt;/span&gt; environment variable in&amp;nbsp;PowerShell&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I need to use &lt;code&gt;makecert&lt;/code&gt; command in PowerShell, but &lt;code&gt;makecert.exe&lt;/code&gt; wasn&amp;#8217;t
+&lt;/pre&gt;&lt;/div&gt;</content><category term="MySQL"></category><category term="MariaDB"></category></entry><entry><title>Add Binary Path in PowerShell</title><link href="https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html" rel="alternate"></link><published>2016-12-28T10:00:00+01:00</published><updated>2018-04-03T21:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-28:/posts/2016/12/28/add-binary-path-in-powershell.html</id><summary type="html">&lt;p&gt;Configure your &lt;span class="caps"&gt;PATH&lt;/span&gt; environment variable in&amp;nbsp;PowerShell&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I need to use &lt;code&gt;makecert&lt;/code&gt; command in PowerShell, but &lt;code&gt;makecert.exe&lt;/code&gt; wasn&amp;#8217;t
 there by default. So, I installed a few things. But still it didn&amp;#8217;t work. I found
 the executable file under &lt;code&gt;C:\Program Files (x86)\Windows Kits\10\bin\x64\&lt;/code&gt;, but the
 command wasn&amp;#8217;t recognized. Apparently, just like bash or other linux shell, it needs
@@ -261,7 +357,7 @@ profile. In this file, you can add the following line, then restart the&amp;nbsp
 &lt;p&gt;&lt;span class="caps"&gt;PS&lt;/span&gt;. In my environment, running cusgom script was disabled. I had to run the
 following command to enable to run the&amp;nbsp;script.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Set-ExecutionPolicy remotesigned
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Windows"></category><category term="PowerShell"></category><category term="environment"></category></entry><entry><title>A Good Example of HTTP HEAD Method</title><link href="https://soundlake.net/posts/2016/12/23/a-good-example-of-http-head-method/" rel="alternate"></link><published>2016-12-23T10:00:00+01:00</published><updated>2018-04-03T20:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-23:/posts/2016/12/23/a-good-example-of-http-head-method/</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;HEAD&lt;/span&gt; method is not the most popular, but still it has a&amp;nbsp;role.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I&amp;#8217;ve never been used &lt;code&gt;HEAD&lt;/code&gt; method in &lt;span class="caps"&gt;HTTP&lt;/span&gt;. I even don&amp;#8217;t know what
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Windows"></category><category term="PowerShell"></category><category term="environment"></category></entry><entry><title>A Good Example of HTTP HEAD Method</title><link href="https://soundlake.net/posts/2016/12/23/a-good-example-of-http-head-method.html" rel="alternate"></link><published>2016-12-23T10:00:00+01:00</published><updated>2018-04-03T20:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-23:/posts/2016/12/23/a-good-example-of-http-head-method.html</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;HEAD&lt;/span&gt; method is not the most popular, but still it has a&amp;nbsp;role.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I&amp;#8217;ve never been used &lt;code&gt;HEAD&lt;/code&gt; method in &lt;span class="caps"&gt;HTTP&lt;/span&gt;. I even don&amp;#8217;t know what
 is in the &lt;span class="caps"&gt;HTTP&lt;/span&gt; method list. Usually I only use &lt;code&gt;GET&lt;/code&gt; and &lt;code&gt;POST&lt;/code&gt;. I
 rarely use &lt;code&gt;DELETE&lt;/code&gt; and &lt;code&gt;FETCH&lt;/code&gt;. But other than that I don&amp;#8217;t use&amp;nbsp;anything.&lt;/p&gt;
 &lt;p&gt;But I had an issue. I got a RESTFul &lt;span class="caps"&gt;API&lt;/span&gt; for file storage. And at some
@@ -288,7 +384,7 @@ then the cache &lt;span class="caps"&gt;MUST&lt;/span&gt; treat the cache entry 
 &lt;p&gt;from &lt;a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"&gt;&lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;methods&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Now I can just get the header with &lt;code&gt;HEAD&lt;/code&gt; method and check if the file exists
-without downloading all the&amp;nbsp;payload.&lt;/p&gt;</content><category term="http"></category><category term="restful"></category><category term="api"></category></entry><entry><title>Create dummy file in Linux</title><link href="https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux/" rel="alternate"></link><published>2016-12-16T10:00:00+01:00</published><updated>2018-04-03T17:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-16:/posts/2016/12/16/create-dummy-file-in-linux/</id><summary type="html">&lt;p&gt;A few options to create a dummy file in&amp;nbsp;Linux&lt;/p&gt;</summary><content type="html">&lt;h3&gt;3 options to create a dummy&amp;nbsp;file&lt;/h3&gt;
+without downloading all the&amp;nbsp;payload.&lt;/p&gt;</content><category term="http"></category><category term="restful"></category><category term="api"></category></entry><entry><title>Create dummy file in Linux</title><link href="https://soundlake.net/posts/2016/12/16/create-dummy-file-in-linux.html" rel="alternate"></link><published>2016-12-16T10:00:00+01:00</published><updated>2018-04-03T17:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2016-12-16:/posts/2016/12/16/create-dummy-file-in-linux.html</id><summary type="html">&lt;p&gt;A few options to create a dummy file in&amp;nbsp;Linux&lt;/p&gt;</summary><content type="html">&lt;h3&gt;3 options to create a dummy&amp;nbsp;file&lt;/h3&gt;
 &lt;p&gt;Sometimes a big size dummy file is necessary.
 There are roughly 3 ways to achieve this: &lt;code&gt;dd&lt;/code&gt;, &lt;code&gt;truncate&lt;/code&gt;, &lt;code&gt;fallocate&lt;/code&gt;.
 I found them from &lt;a href="http://stackoverflow.com/questions/257844/quickly-create-a-large-file-on-a-linux-system"&gt;this Stackoverflow answer&lt;/a&gt;.&lt;/p&gt;
@@ -305,7 +401,7 @@ really want to &lt;em&gt;allocate&lt;/em&gt; the space, it&amp;#8217;s not the b
 &lt;h3&gt;More about &lt;code&gt;fallocate&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;The basic usage&amp;nbsp;is&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fallocate -l &lt;span class="o"&gt;[&lt;/span&gt;length&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;filename&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="dummy"></category><category term="command"></category><category term="CLI"></category></entry><entry><title>Pelican Tips</title><link href="https://soundlake.net/posts/2014/12/21/pelican-tips/" rel="alternate"></link><published>2014-12-21T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-21:/posts/2014/12/21/pelican-tips/</id><summary type="html">&lt;h3&gt;&lt;a href="https://github.com/davisp/ghp-import"&gt;ghp-import&lt;/a&gt;&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="dummy"></category><category term="command"></category><category term="CLI"></category></entry><entry><title>Pelican Tips</title><link href="https://soundlake.net/posts/2014/12/21/pelican-tips.html" rel="alternate"></link><published>2014-12-21T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-21:/posts/2014/12/21/pelican-tips.html</id><summary type="html">&lt;h3&gt;&lt;a href="https://github.com/davisp/ghp-import"&gt;ghp-import&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This is a essential tool for using GitHub Page as Pelican blog.
 With this tool, I don&amp;#8217;t need to manage two repo;
 one for generator, and the other for output, the actual blog.
@@ -341,7 +437,7 @@ git commit -m &lt;span class="s2"&gt;&amp;quot;add jinja plugin&amp;quot;&lt;/sp
 Thus, &lt;span class="caps"&gt;VIM&lt;/span&gt; usually recognize it as &lt;span class="caps"&gt;HTML&lt;/span&gt; file.
 So, I have to set filetype to &lt;code&gt;jinja&lt;/code&gt; to use this&amp;nbsp;plugin.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;filetype&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;jinja
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="python"></category><category term="vim"></category></entry><entry><title>Travis 체험하기</title><link href="https://soundlake.net/posts/2014/12/20/hello-travis-ko/" rel="alternate"></link><published>2014-12-20T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-20:/posts/2014/12/20/hello-travis-ko/</id><summary type="html">&lt;p&gt;&lt;a href="https://travis-ci.org"&gt;Travis&lt;/a&gt;에 대해선 오래전부터 들어왔다.
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="python"></category><category term="vim"></category></entry><entry><title>Travis 체험하기</title><link href="https://soundlake.net/posts/2014/12/20/ko/hello-travis.html" rel="alternate"></link><published>2014-12-20T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-20:/posts/2014/12/20/ko/hello-travis.html</id><summary type="html">&lt;p&gt;&lt;a href="https://travis-ci.org"&gt;Travis&lt;/a&gt;에 대해선 오래전부터 들어왔다.
 뭔가를 자동화하는 도구라고 하는데,
 딱히 사용해볼 기회가 없었다.
 그런데 &lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;으로 블로그를 시작하고 보니,
@@ -433,7 +529,7 @@ README에 &lt;a href="https://github.com/sstephenson/rbenv#homebrew-on-mac-os-x"
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="automation"></category><category term="travis"></category><category term="ruby"></category><category term="pelican"></category></entry><entry><title>Stylus를 씁시다.</title><link href="https://soundlake.net/posts/2014/12/18/lets-use-stylus-ko/" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/lets-use-stylus-ko/</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;CSS&lt;/span&gt; preprocessor들을 찾아보다가, 충동적으로 Stylus로 가기로 했다.
+&lt;/ol&gt;</content><category term="automation"></category><category term="travis"></category><category term="ruby"></category><category term="pelican"></category></entry><entry><title>Stylus를 씁시다.</title><link href="https://soundlake.net/posts/2014/12/18/ko/lets-use-stylus.html" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/ko/lets-use-stylus.html</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;CSS&lt;/span&gt; preprocessor들을 찾아보다가, 충동적으로 Stylus로 가기로 했다.
 이게 다 &lt;a href="http://webdesign.tutsplus.com/articles/why-i-choose-stylus-and-you-should-too--webdesign-18412"&gt;이 블로그&lt;/a&gt; 때문이다.
 글이 무척이나&amp;nbsp;유혹적이었다.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://learnboost.github.io/stylus"&gt;Stylus 공식&amp;nbsp;홈페이지&lt;/a&gt;&lt;/p&gt;
@@ -470,7 +566,7 @@ git commit -m &lt;span class="s2"&gt;&amp;quot;add vim-stylus plugin&amp;quot;&l
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;이렇게 하면 구성 끝. VIM에서도 Stylus를&amp;nbsp;쉽게.&lt;/p&gt;</content><category term="css"></category><category term="web"></category><category term="vim"></category><category term="git"></category><category term="npm"></category></entry><entry><title>MacVim 전체화면 깨짐 해결</title><link href="https://soundlake.net/posts/2014/12/18/macvim-fullscreen-ko/" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/macvim-fullscreen-ko/</id><summary type="html">&lt;p&gt;Mac 업데이트 후, MacVim 전체화면을 실행하면 화면 오른쪽에 밝은 색의 막대가&amp;nbsp;생겨났다.&lt;/p&gt;
+&lt;p&gt;이렇게 하면 구성 끝. VIM에서도 Stylus를&amp;nbsp;쉽게.&lt;/p&gt;</content><category term="css"></category><category term="web"></category><category term="vim"></category><category term="git"></category><category term="npm"></category></entry><entry><title>MacVim 전체화면 깨짐 해결</title><link href="https://soundlake.net/posts/2014/12/18/ko/macvim-fullscreen.html" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/ko/macvim-fullscreen.html</id><summary type="html">&lt;p&gt;Mac 업데이트 후, MacVim 전체화면을 실행하면 화면 오른쪽에 밝은 색의 막대가&amp;nbsp;생겨났다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="밝은 색 막대가 생긴 MacVim 전체화면모드" src="https://soundlake.net/images/20141218_screen.png"&gt;&lt;/p&gt;
 &lt;p&gt;한동안 좀 짜증이 났지만 그래도 견딜만 해서 참았다가, 오늘 생각난 김에 이것도 해결. 멕북은 화면 베젤이 까만 색이니 화면이 어두운데 거기 한 부분만 밝으니 여간 신경쓰이는 게&amp;nbsp;아니었다.&lt;/p&gt;
 &lt;p&gt;한참 찾다가 결국 &lt;a href="https://code.google.com/p/macvim/issues/detail?id=454"&gt;두둥!&lt;/a&gt;&lt;/p&gt;
@@ -484,7 +580,7 @@ git commit -m &lt;span class="s2"&gt;&amp;quot;add vim-stylus plugin&amp;quot;&l
     2. Advanced 탭으로.
     3. Prefer native fullscreen mode.. 를 비 활성화.
     4. Full screen mode 풀었다가 다시 돌아오면,
-    5. 짜잔.&amp;nbsp;해결.&lt;/p&gt;</content><category term="vim"></category><category term="MacVim"></category><category term="Mac"></category></entry><entry><title>VIM에서 한글 사용하기</title><link href="https://soundlake.net/posts/2014/12/18/using-hangul-in-vim-ko/" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/using-hangul-in-vim-ko/</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org"&gt;&lt;span class="caps"&gt;VIM&lt;/span&gt;&lt;/a&gt;의 위대함을 설파하는 건 이미 많은 사람이 했고.
+    5. 짜잔.&amp;nbsp;해결.&lt;/p&gt;</content><category term="vim"></category><category term="MacVim"></category><category term="Mac"></category></entry><entry><title>VIM에서 한글 사용하기</title><link href="https://soundlake.net/posts/2014/12/18/ko/using-hangul-in-vim.html" rel="alternate"></link><published>2014-12-18T10:00:00+01:00</published><updated>2018-04-08T02:00:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2014-12-18:/posts/2014/12/18/ko/using-hangul-in-vim.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org"&gt;&lt;span class="caps"&gt;VIM&lt;/span&gt;&lt;/a&gt;의 위대함을 설파하는 건 이미 많은 사람이 했고.
 문제는 한글을 사용하기가 좀 불편하다는 거다.
 물론 에디터 자체는 유니코드를 지원하니 한글을 사용할 수 있지만,
 문제는 normal mode에서 명령어 입력을 해야 하는데,

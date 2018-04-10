@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Migrating the git remote repo from single to multiple</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="soundlake">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="soundlake">
+        <meta itemprop="image" content="">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="https://soundlake.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="soundlake ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="sound_lake">
+        <meta name="twitter:image" content="">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+        <!-- Font Awesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+    <meta name="twitter:creator" content="sound_lake">
+    <meta name="twitter:url" content="https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html">
+    <meta name="twitter:title" content="soundlake ~ Migrating the git remote repo from single to multiple">
+    <meta name="twitter:description" content="A story of migrating git repo, and the advantages of using GitLab.">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="soundlake ~ Migrating the git remote repo from single to multiple"/>
+    <meta property="og:description" content="A story of migrating git repo, and the advantages of using GitLab."/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a href="https://soundlake.net/">soundlake</a></h1>
+        <p>Developer / Programmer / Musician</p>
+    <br>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
+
+                <li><a class="nav__link" href="https://soundlake.net/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume.html">Short&nbsp;Resume</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+<a href="https://github.com/soundlake" target="_blank"><i class="fab fa-github fa-lg"></i></a><a href="https://bitbucket.org/soundlake" target="_blank"><i class="fab fa-bitbucket fa-lg"></i></a><a href="https://gitlab.com/soundlake" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a><a href="https://stackoverflow.com/users/4276533/soundlake" target="_blank"><i class="fab fa-stack-overflow fa-lg"></i></a><a href="https://twitter.com/sound_lake" target="_blank"><i class="fab fa-twitter fa-lg"></i></a><a href="https://sound-lake.tumblr.com" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a><a href="https://t.me/soundlake" target="_blank"><i class="fab fa-telegram fa-lg"></i></a><a href="https://soundcloud.com/soundlake" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>            <a href="https://soundlake.net/feeds/all.atom.xml" rel="alternate">
+                <i class="fas fa-rss fa-lg"></i></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li class="active"><a
+                        href="https://soundlake.net/category/dev.html">Dev</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://getpelican.com">Pelican</a></li>
+                <li><a href="http://python.org">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                <li><a href="https://daringfireball.net/projects/markdown">Markdown</a></li>
+                <li><a href="https://python-markdown.github.io">Python-Markdown</a></li>
+                <li><a href="https://github.com/Parbhat/pelican-blue">pelican-blue</a></li>
+                <li><a href="https://github.com/soundlake/soundlake.net">source code</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content">
+        <article>
+            <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html" rel="bookmark"
+                                                  title="Permalink to Migrating the git remote repo from single to multiple">Migrating the git remote repo from single to&nbsp;multiple</a></h2>
+            <div class="entry-content blog-post">
+                <h3>Personal History on Git Pull&nbsp;Request</h3>
+<p>I&#8217;ve learned about <a href="https://git-scm.com">Git</a> many years ago, and since a few years ago I&#8217;ve been
+using <a href="https://git-scm.com">Git</a> actively. But pull request or merge request hasn&#8217;t been my favorite
+thing until a couple of month&nbsp;ago.</p>
+<h4>Before, at My&nbsp;Work</h4>
+<p>We were using single remote repository and each developers used their own
+branch name prefix. The work flow goes like&nbsp;&#8230;</p>
+<ol>
+<li>Each developer works on their own&nbsp;branch.</li>
+<li>When the branch is ready, then the developer notify it to the&nbsp;maintainer.</li>
+<li>The maintainer checks the branch and merges into the main&nbsp;branch.</li>
+</ol>
+<p>The biggest downside of this was usually the branches are over populated. It
+made the log of the repo quite confusing. And the result of <code>git branch</code> always
+exceeded one&nbsp;page.</p>
+<p>Another thing had to be improved was the logging for merging. Generally, we
+only have one maintainer on our team, and he handled those merge notices from
+each developers, but the procedure was rather obscure and even the notice was
+sometimes forgotten for busy&nbsp;work.</p>
+<h4>Migration to <a href="https://gitlab.com">GitLab</a> with Multiple Personal&nbsp;Repositories</h4>
+<p>We gradually moved to <a href="https://gitlab.com">GitLab</a>. Still there are some rumors about the
+difficulty of deploying self-hosted <a href="https://gitlab.com">GitLab</a>. And we don&#8217;t dare doing such
+risky experiment. My team is still small, and <a href="https://gitlab.com">GitLab</a>&#8216;s free plan has good
+enough&nbsp;features.</p>
+<p>These are the details of how to move to <a href="https://gitlab.com">GitLab</a>.</p>
+<ol>
+<li>The maintainer creates the main repo and the&nbsp;group.</li>
+<li>The developers sign up, join the group, create their own&nbsp;repo.</li>
+<li>The developers change the remote repo configuration on the local&nbsp;repo.</li>
+</ol>
+<div class="highlight"><pre><span></span>git remote set-url origin <span class="o">{</span>personal remote repo<span class="o">}</span>
+git remote add main <span class="o">{</span>main remote repo<span class="o">}</span>
+git remote set-url --push main DISABLE_PUSH_TO_MAIN <span class="c1"># This is optional</span>
+</pre></div>
+
+
+<ol start="4"><li>Clean up the unnecessary&nbsp;branches</li></ol>
+
+<p><em>Note:</em> <code>DISABLE_PUSH_TO_MAIN</code> is arbiturarily chosen string. You can set any
+invalid <span class="caps">URL</span> for <code>main</code><span class="quo">&#8216;</span>s push <span class="caps">URL</span> for disabling push to the <code>main</code> repo. If you
+are one of the maintainers, then it&#8217;s not&nbsp;necessary.</p>
+<h4>Now, at My&nbsp;Work</h4>
+<p>Now, each developer manages their own repo. And time to time they checkes the
+main repo with <code>git fetch main</code>. If a pile of commits are ready to be merged,
+then the developer create a merge&nbsp;request.</p>
+<h4>The Advatages of using this new&nbsp;system</h4>
+<p>There are some unexpected&nbsp;advatages.</p>
+<ul>
+<li>You can <strong>comment on each diff line</strong> of code in <a href="https://gitlab.com">GitLab</a>. This makes the
+  feedback easy and crystal&nbsp;clear.</li>
+<li>You can configure a repo to <strong>limit the branch to push</strong>. You can easily
+  protect your main&nbsp;repo.</li>
+<li>You can use <a href="https://gitlab.com">GitLab</a>&#8216;s <strong>contiuous integration</strong> feature. Once it&#8217;s
+  configured, all you need to do is pushing to the remote branch, and the other
+  job is done by automated <a href="https://gitlab.com">GitLab</a>.</li>
+<li>You can set a <strong>flag on the merge request</strong>. And then the request will be
+  merged automatically after the contiuous integration is done&nbsp;successfully.</li>
+</ul>
+<p>Yet we&#8217;re discovering the good side of <a href="https://gitlab.com">GitLab</a>.</p>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="https://soundlake.net/author/soundlake">@soundlake</a>
+                <span> in </span>
+                <span class="post_category"><a href="https://soundlake.net/category/dev.html" rel="bookmark"
+                                               title="Permalink to Dev">[ Dev ]</a></span>
+                <span class="post_date">Mon 09 April 2018</span>
+                <div><span>Tags : </span>
+                            <span><a href="https://soundlake.net/tag/git.html">#git, </a></span>
+                            <span><a href="https://soundlake.net/tag/gitlab.html">#gitlab, </a></span>
+                            <span><a href="https://soundlake.net/tag/development.html">#development, </a></span>
+                </div>
+
+                <div class="social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html&text=Migrating the git remote repo from single to multiple&via=sound_lake">
+                        <i class="fab fa-twitter fa-2x"></i></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-google-plus fa-2x"></i></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html&t=Migrating the git remote repo from single to multiple">
+                        <i class="fab fa-facebook fa-2x"></i></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html&title=Migrating the git remote repo from single to multiple"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-linkedin fa-2x"></i></a></span>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Migrating the git remote repo from single to multiple&amp;body=Viens découvrir un article à propos de [Migrating the git remote repo from single to multiple] sur le site de soundlake. https://soundlake.net/posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html"
+                            title="Share by Email" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i></a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments !</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "posts/2018/04/09/migrating-the-git-remote-repo-from-single-to-multiple.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://https-soundlake-net.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>
