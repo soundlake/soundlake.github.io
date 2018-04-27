@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-04-11T12:05:00+02:00</updated><entry><title>Sync Date and Time in Debian</title><link href="https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html" rel="alternate"></link><published>2018-04-11T12:05:00+02:00</published><updated>2018-04-11T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-11:/posts/2018/04/11/sync-date-and-time-in-debian.html</id><summary type="html">&lt;p&gt;Using ntp, you can easily sync your Debian machine&amp;#8217;s date ane&amp;nbsp;time&lt;/p&gt;</summary><content type="html">&lt;p&gt;I thought I only need &lt;span class="caps"&gt;NTP&lt;/span&gt; client to synchronize the date and time of my linux
+<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-04-20T12:05:00+02:00</updated><entry><title>Migration from VirtualBox to Hyper-V</title><link href="https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html" rel="alternate"></link><published>2018-04-20T12:05:00+02:00</published><updated>2018-04-20T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-20:/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html</id><summary type="html">&lt;p&gt;I was stuck in quite a problem of this&amp;nbsp;migration.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Background&amp;nbsp;Story&lt;/h3&gt;
+&lt;p&gt;The first purpose was running &lt;a href="https://docs.gitlab.com/runner/"&gt;Gitlab Runner&lt;/a&gt; in a local machine.
+Then I realise that I need &lt;a href="https://store.docker.com/editions/community/docker-ce-desktop-windows"&gt;Docker for Windows&lt;/a&gt; for the local Windows machine.
+And, of course, unfortunately, it requires &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The reason why it&amp;#8217;s unfortunate is that I was using VirtualBox quite actively,
+including 2 active virtual machines, and when I install &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;,
+then I can&amp;#8217;t use VirtualBox&amp;nbsp;anymore.&lt;/p&gt;
+&lt;p&gt;I was thinking to use old [Docker Toolbox][], but I&amp;#8217;m not sure until when it&amp;#8217;s supported.
+So, I searched for the way to migrate VirtualBox &lt;span class="caps"&gt;VM&lt;/span&gt; to &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt; &lt;span class="caps"&gt;VM&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;The&amp;nbsp;Instruction&lt;/h3&gt;
+&lt;h4&gt;1. Export existing VirtualBox&amp;nbsp;VMs&lt;/h4&gt;
+&lt;p&gt;That&amp;#8217;s an easy part. In VirtualBox &lt;span class="caps"&gt;GUI&lt;/span&gt;, you can find export menu.
+If you click it, then a popup comes up, and you can choose the location of the exported file.
+Note that, you need to change the format. The recommended one is &lt;strong&gt;&lt;span class="caps"&gt;OVF&lt;/span&gt;&amp;nbsp;2.0&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;2. Disassemble the exported&amp;nbsp;file&lt;/h4&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;OVF&lt;/span&gt; format is basically a zip archive with some information for the &lt;span class="caps"&gt;VM&lt;/span&gt;.
+You can unzip it with your favorite unzipper. I used &lt;a href="https://www.7-zip.org/"&gt;7zip&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The only file it matters is &lt;code&gt;*.vmdk&lt;/code&gt; file. It is the virtual &lt;span class="caps"&gt;HDD&lt;/span&gt; of your &lt;span class="caps"&gt;VM&lt;/span&gt;.&lt;/p&gt;
+&lt;h4&gt;3. Install some&amp;nbsp;tools&lt;/h4&gt;
+&lt;h5&gt;&lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine&amp;nbsp;Converter&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;Firstly, &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt; is picky enough not to recognize this &lt;code&gt;*.vmdk&lt;/code&gt; format.
+So, you need to convert it with a tool that MicroSoft provides.
+It&amp;#8217;s called &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt;.
+You can download it, and install&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Open Powershell, and run this&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Import-Module &amp;#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&amp;#39;
+Convert-VHD exported_file.vmdk target_file.vhdx -Passthru
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;&lt;a href="http://members.ozemail.com.au/~nulifetv/freezip/freeware/dsfok.zip"&gt;dsfok&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;In high possibility, the command above will fail.
+Because the format for the &lt;span class="caps"&gt;VMDK&lt;/span&gt; file from VirtualBox has some kind of wrong description.
+To edit the description of &lt;span class="caps"&gt;VMDK&lt;/span&gt; file, this tool is&amp;nbsp;required.&lt;/p&gt;
+&lt;p&gt;You can download and unzip it, then you can use&amp;nbsp;it.&lt;/p&gt;
+&lt;h4&gt;4. Tweak the &lt;span class="caps"&gt;VMDK&lt;/span&gt;&amp;nbsp;file.&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path\to\dsfok\dsfo.exe &amp;quot;path\to\vmdk\file.vmdk&amp;quot; 512 1024 desc.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A new &lt;code&gt;desc.txt&lt;/code&gt; file is now created, and it contains the description of the &lt;span class="caps"&gt;VMDK&lt;/span&gt; file.
+Edit the file accordingly by removing or commenting out the erronous line.
+The error message from &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt; has some&amp;nbsp;hints.&lt;/p&gt;
+&lt;p&gt;Then apply the new description file into the &lt;span class="caps"&gt;VMDK&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path\to\dsfok\dsfi.exe &amp;quot;path\to\vmdk\file.vmdk&amp;quot; 512 1024 desc.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt;, if there&amp;#8217;s no more&amp;nbsp;errors.&lt;/p&gt;
+&lt;h4&gt;5. Create a new &lt;span class="caps"&gt;VM&lt;/span&gt; in &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;If there&amp;#8217;s no more error, then &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt; will create a new virtual &lt;span class="caps"&gt;HDD&lt;/span&gt; for &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Creating a new &lt;span class="caps"&gt;VM&lt;/span&gt; in &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt; is quite straight forward.
+Don&amp;#8217;t forget to add newly created virtual &lt;span class="caps"&gt;HDD&lt;/span&gt; to this new &lt;span class="caps"&gt;VM&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Something&amp;nbsp;left&lt;/h3&gt;
+&lt;p&gt;Unfortunately, the migration is not fully done yet.
+The network configuration is&amp;nbsp;missing.&lt;/p&gt;
+&lt;p&gt;I can&amp;#8217;t create any virtual swich, and currently, I don&amp;#8217;t have network access from the host machine to guest &lt;span class="caps"&gt;VM&lt;/span&gt;.
+The reason here is Trend Office Scan prevents to create virtual switch in &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;.
+And this Trend Office Scan is managed by company&amp;#8217;s tech support team,
+and I don&amp;#8217;t have permission to change the configuration or disable it&amp;nbsp;temporarily.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m longing for using &lt;a href="https://docs.gitlab.com/runner/"&gt;Gitlab Runner&lt;/a&gt; on the local machine&amp;nbsp;someday.&lt;/p&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;https://aadamich.wordpress.com/articles/hyper-v/convert-and-launch-virtualbox-vhd-on-hyper-v/&lt;/li&gt;
+&lt;li&gt;https://blogs.msdn.microsoft.com/timomta/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd/&lt;/li&gt;
+&lt;li&gt;https://stackoverflow.com/questions/37481737/error-when-converting-vmware-virtual-disk-to-hyperv&lt;/li&gt;
+&lt;/ul&gt;</content><category term="windows"></category><category term="virtual machine"></category><category term="hyper-v"></category><category term="migration"></category></entry><entry><title>Sync Date and Time in Debian</title><link href="https://soundlake.net/posts/2018/04/11/sync-date-and-time-in-debian.html" rel="alternate"></link><published>2018-04-11T12:05:00+02:00</published><updated>2018-04-11T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-11:/posts/2018/04/11/sync-date-and-time-in-debian.html</id><summary type="html">&lt;p&gt;Using ntp, you can easily sync your Debian machine&amp;#8217;s date ane&amp;nbsp;time&lt;/p&gt;</summary><content type="html">&lt;p&gt;I thought I only need &lt;span class="caps"&gt;NTP&lt;/span&gt; client to synchronize the date and time of my linux
 machine. But apparently, &lt;code&gt;ntpdate&lt;/code&gt; runs once, and &lt;a href="https://www.debian.org"&gt;Debian&lt;/a&gt; &amp;#8220;expects&amp;#8221; the user
 to install &lt;code&gt;ntp&lt;/code&gt; according to &lt;a href="https://unix.stackexchange.com/questions/137266/how-to-keep-debian-internal-clock-synchronized-with-ntp-servers/137269#137269"&gt;this stack exchange
 answer&lt;/a&gt;.&lt;/p&gt;

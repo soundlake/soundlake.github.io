@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Migration from VirtualBox to Hyper-V</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="soundlake">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="soundlake">
+        <meta itemprop="image" content="">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://soundlake.net/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="https://soundlake.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="soundlake ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="sound_lake">
+        <meta name="twitter:image" content="">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+        <!-- Font Awesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+    <meta name="twitter:creator" content="sound_lake">
+    <meta name="twitter:url" content="https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html">
+    <meta name="twitter:title" content="soundlake ~ Migration from VirtualBox to Hyper-V">
+    <meta name="twitter:description" content="I was stuck in quite a problem of this migration.">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="soundlake ~ Migration from VirtualBox to Hyper-V"/>
+    <meta property="og:description" content="I was stuck in quite a problem of this migration."/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a href="https://soundlake.net/">soundlake</a></h1>
+        <p>Developer / Programmer / Musician</p>
+    <br>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
+
+                <li><a class="nav__link" href="https://soundlake.net/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://soundlake.net/pages/resume.html">Short&nbsp;Resume</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+<a href="https://github.com/soundlake" target="_blank"><i class="fab fa-github fa-lg"></i></a><a href="https://bitbucket.org/soundlake" target="_blank"><i class="fab fa-bitbucket fa-lg"></i></a><a href="https://gitlab.com/soundlake" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a><a href="https://stackoverflow.com/users/4276533/soundlake" target="_blank"><i class="fab fa-stack-overflow fa-lg"></i></a><a href="https://twitter.com/sound_lake" target="_blank"><i class="fab fa-twitter fa-lg"></i></a><a href="https://sound-lake.tumblr.com" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a><a href="https://t.me/soundlake" target="_blank"><i class="fab fa-telegram fa-lg"></i></a><a href="https://soundcloud.com/soundlake" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>            <a href="https://soundlake.net/feeds/all.atom.xml" rel="alternate">
+                <i class="fas fa-rss fa-lg"></i></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li class="active"><a
+                        href="https://soundlake.net/category/dev.html">Dev</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://getpelican.com">Pelican</a></li>
+                <li><a href="http://python.org">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                <li><a href="https://daringfireball.net/projects/markdown">Markdown</a></li>
+                <li><a href="https://python-markdown.github.io">Python-Markdown</a></li>
+                <li><a href="https://github.com/Parbhat/pelican-blue">pelican-blue</a></li>
+                <li><a href="https://github.com/soundlake/soundlake.net">source code</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content">
+        <article>
+            <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html" rel="bookmark"
+                                                  title="Permalink to Migration from VirtualBox to Hyper-V">Migration from VirtualBox to&nbsp;Hyper-V</a></h2>
+            <div class="entry-content blog-post">
+                <h3>Background&nbsp;Story</h3>
+<p>The first purpose was running <a href="https://docs.gitlab.com/runner/">Gitlab Runner</a> in a local machine.
+Then I realise that I need <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> for the local Windows machine.
+And, of course, unfortunately, it requires <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a>.</p>
+<p>The reason why it&#8217;s unfortunate is that I was using VirtualBox quite actively,
+including 2 active virtual machines, and when I install <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a>,
+then I can&#8217;t use VirtualBox&nbsp;anymore.</p>
+<p>I was thinking to use old [Docker Toolbox][], but I&#8217;m not sure until when it&#8217;s supported.
+So, I searched for the way to migrate VirtualBox <span class="caps">VM</span> to <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a> <span class="caps">VM</span>.</p>
+<h3>The&nbsp;Instruction</h3>
+<h4>1. Export existing VirtualBox&nbsp;VMs</h4>
+<p>That&#8217;s an easy part. In VirtualBox <span class="caps">GUI</span>, you can find export menu.
+If you click it, then a popup comes up, and you can choose the location of the exported file.
+Note that, you need to change the format. The recommended one is <strong><span class="caps">OVF</span>&nbsp;2.0</strong></p>
+<h4>2. Disassemble the exported&nbsp;file</h4>
+<p>The <span class="caps">OVF</span> format is basically a zip archive with some information for the <span class="caps">VM</span>.
+You can unzip it with your favorite unzipper. I used <a href="https://www.7-zip.org/">7zip</a>.</p>
+<p>The only file it matters is <code>*.vmdk</code> file. It is the virtual <span class="caps">HDD</span> of your <span class="caps">VM</span>.</p>
+<h4>3. Install some&nbsp;tools</h4>
+<h5><a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine&nbsp;Converter</a></h5>
+<p>Firstly, <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a> is picky enough not to recognize this <code>*.vmdk</code> format.
+So, you need to convert it with a tool that MicroSoft provides.
+It&#8217;s called <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a>.
+You can download it, and install&nbsp;it.</p>
+<p>Open Powershell, and run this&nbsp;command.</p>
+<div class="highlight"><pre><span></span>Import-Module &#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&#39;
+Convert-VHD exported_file.vmdk target_file.vhdx -Passthru
+</pre></div>
+
+
+<h5><a href="http://members.ozemail.com.au/~nulifetv/freezip/freeware/dsfok.zip">dsfok</a></h5>
+<p>In high possibility, the command above will fail.
+Because the format for the <span class="caps">VMDK</span> file from VirtualBox has some kind of wrong description.
+To edit the description of <span class="caps">VMDK</span> file, this tool is&nbsp;required.</p>
+<p>You can download and unzip it, then you can use&nbsp;it.</p>
+<h4>4. Tweak the <span class="caps">VMDK</span>&nbsp;file.</h4>
+<div class="highlight"><pre><span></span>path\to\dsfok\dsfo.exe &quot;path\to\vmdk\file.vmdk&quot; 512 1024 desc.txt
+</pre></div>
+
+
+<p>A new <code>desc.txt</code> file is now created, and it contains the description of the <span class="caps">VMDK</span> file.
+Edit the file accordingly by removing or commenting out the erronous line.
+The error message from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a> has some&nbsp;hints.</p>
+<p>Then apply the new description file into the <span class="caps">VMDK</span>&nbsp;file.</p>
+<div class="highlight"><pre><span></span>path\to\dsfok\dsfi.exe &quot;path\to\vmdk\file.vmdk&quot; 512 1024 desc.txt
+</pre></div>
+
+
+<p>Run <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a>, if there&#8217;s no more&nbsp;errors.</p>
+<h4>5. Create a new <span class="caps">VM</span> in <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a></h4>
+<p>If there&#8217;s no more error, then <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a> will create a new virtual <span class="caps">HDD</span> for <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a>.</p>
+<p>Creating a new <span class="caps">VM</span> in <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a> is quite straight forward.
+Don&#8217;t forget to add newly created virtual <span class="caps">HDD</span> to this new <span class="caps">VM</span>.</p>
+<h3>Something&nbsp;left</h3>
+<p>Unfortunately, the migration is not fully done yet.
+The network configuration is&nbsp;missing.</p>
+<p>I can&#8217;t create any virtual swich, and currently, I don&#8217;t have network access from the host machine to guest <span class="caps">VM</span>.
+The reason here is Trend Office Scan prevents to create virtual switch in <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">Hyper-V</a>.
+And this Trend Office Scan is managed by company&#8217;s tech support team,
+and I don&#8217;t have permission to change the configuration or disable it&nbsp;temporarily.</p>
+<p>I&#8217;m longing for using <a href="https://docs.gitlab.com/runner/">Gitlab Runner</a> on the local machine&nbsp;someday.</p>
+<h3>References</h3>
+<ul>
+<li>https://aadamich.wordpress.com/articles/hyper-v/convert-and-launch-virtualbox-vhd-on-hyper-v/</li>
+<li>https://blogs.msdn.microsoft.com/timomta/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd/</li>
+<li>https://stackoverflow.com/questions/37481737/error-when-converting-vmware-virtual-disk-to-hyperv</li>
+</ul>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="https://soundlake.net/author/soundlake">@soundlake</a>
+                <span> in </span>
+                <span class="post_category"><a href="https://soundlake.net/category/dev.html" rel="bookmark"
+                                               title="Permalink to Dev">[ Dev ]</a></span>
+                <span class="post_date">Fri 20 April 2018</span>
+                <div><span>Tags : </span>
+                            <span><a href="https://soundlake.net/tag/windows.html">#windows, </a></span>
+                            <span><a href="https://soundlake.net/tag/virtual-machine.html">#virtual machine, </a></span>
+                            <span><a href="https://soundlake.net/tag/hyper-v.html">#hyper-v, </a></span>
+                            <span><a href="https://soundlake.net/tag/migration.html">#migration, </a></span>
+                </div>
+
+                <div class="social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html&text=Migration from VirtualBox to Hyper-V&via=sound_lake">
+                        <i class="fab fa-twitter fa-2x"></i></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-google-plus fa-2x"></i></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html&t=Migration from VirtualBox to Hyper-V">
+                        <i class="fab fa-facebook fa-2x"></i></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html&title=Migration from VirtualBox to Hyper-V"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
+                        <i class="fab fa-linkedin fa-2x"></i></a></span>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Migration from VirtualBox to Hyper-V&amp;body=Viens découvrir un article à propos de [Migration from VirtualBox to Hyper-V] sur le site de soundlake. https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html"
+                            title="Share by Email" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i></a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments !</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://https-soundlake-net.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>
