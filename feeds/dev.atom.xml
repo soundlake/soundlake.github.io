@@ -26,8 +26,8 @@ git config --global rebase.autostash &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;h4&gt;Better &lt;code&gt;git lola&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href="http://blog.kfish.org/2010/04/git-lola.html"&gt;&lt;code&gt;git lola&lt;/code&gt;&lt;/a&gt; is one of my favorite command.
 And I found an idea for a little&amp;nbsp;improvement.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git config --global alias.lol &lt;span class="s1"&gt;&amp;#39;log --graph --decorate --pretty=format:&amp;#39;&lt;/span&gt;%C&lt;span class="o"&gt;(&lt;/span&gt;auto&lt;span class="o"&gt;)&lt;/span&gt;%h -%d%Creset %s %Cgreen&lt;span class="o"&gt;(&lt;/span&gt;%cr&lt;span class="o"&gt;)&lt;/span&gt;%Creset&lt;span class="s1"&gt;&amp;#39; --abbrev-commit&lt;/span&gt;
-&lt;span class="s1"&gt;git config --global alias.lola &amp;#39;&lt;/span&gt;log --graph --decorate --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;&amp;#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&amp;#39;&lt;/span&gt; --abbrev-commit --all&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git config --global alias.lol&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;log --graph --decorate --pretty=format:&amp;#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&amp;#39; --abbrev-commit&amp;quot;&lt;/span&gt;
+git config --global alias.lola&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;log --graph --decorate --pretty=format:&amp;#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&amp;#39; --abbrev-commit --all&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

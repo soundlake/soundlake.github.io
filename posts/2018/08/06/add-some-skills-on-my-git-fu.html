@@ -122,8 +122,8 @@ git config --global rebase.autostash <span class="nb">true</span>
 <h4>Better <code>git lola</code></h4>
 <p><a href="http://blog.kfish.org/2010/04/git-lola.html"><code>git lola</code></a> is one of my favorite command.
 And I found an idea for a little&nbsp;improvement.</p>
-<div class="highlight"><pre><span></span>git config --global alias.lol <span class="s1">&#39;log --graph --decorate --pretty=format:&#39;</span>%C<span class="o">(</span>auto<span class="o">)</span>%h -%d%Creset %s %Cgreen<span class="o">(</span>%cr<span class="o">)</span>%Creset<span class="s1">&#39; --abbrev-commit</span>
-<span class="s1">git config --global alias.lola &#39;</span>log --graph --decorate --pretty<span class="o">=</span>format:<span class="s1">&#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&#39;</span> --abbrev-commit --all<span class="err">&#39;</span>
+<div class="highlight"><pre><span></span>git config --global alias.lol<span class="o">=</span><span class="s2">&quot;log --graph --decorate --pretty=format:&#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&#39; --abbrev-commit&quot;</span>
+git config --global alias.lola<span class="o">=</span><span class="s2">&quot;log --graph --decorate --pretty=format:&#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&#39; --abbrev-commit --all&quot;</span>
 </pre></div>
 
 
