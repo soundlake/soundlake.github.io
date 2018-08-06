@@ -40,8 +40,8 @@ git config --global rebase.autostash true
 And I found an idea for a little improvement.
 
 ```shell
-git config --global alias.lol 'log --graph --decorate --pretty=format:'%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit
-git config --global alias.lola 'log --graph --decorate --pretty=format:'%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --all'
+git config --global alias.lol="log --graph --decorate --pretty=format:'%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit"
+git config --global alias.lola="log --graph --decorate --pretty=format:'%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --all"
 ```
 
 The difference is custom formatting with `%C(auto)`, which derives the original color scheme of `oneline` option,
