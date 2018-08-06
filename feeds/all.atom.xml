@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-04-20T12:05:00+02:00</updated><entry><title>Migration from VirtualBox to Hyper-V</title><link href="https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html" rel="alternate"></link><published>2018-04-20T12:05:00+02:00</published><updated>2018-04-20T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-20:/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html</id><summary type="html">&lt;p&gt;I was stuck in quite a problem of this&amp;nbsp;migration.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Background&amp;nbsp;Story&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-08-06T11:12:00+02:00</updated><entry><title>Add some skills on my Git-fu</title><link href="https://soundlake.net/posts/2018/08/06/add-some-skills-on-my-git-fu.html" rel="alternate"></link><published>2018-08-06T11:12:00+02:00</published><updated>2018-08-06T11:12:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-08-06:/posts/2018/08/06/add-some-skills-on-my-git-fu.html</id><summary type="html">&lt;p&gt;Git tips, which make the dev life&amp;nbsp;easier&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, one of my colleague introduced me &lt;a href="https://about.gitlab.com/2016/12/08/git-tips-and-tricks/"&gt;this article&lt;/a&gt;.
+Apparently, it&amp;#8217;s written already 2 years ago. There are something I already know, but also are still some new and good tips for&amp;nbsp;me.&lt;/p&gt;
+&lt;h3&gt;Global&amp;nbsp;Configurations&lt;/h3&gt;
+&lt;h4&gt;Deleting a local branch which is already removed in the&amp;nbsp;remote&lt;/h4&gt;
+&lt;p&gt;Since, I&amp;#8217;m in an actively git-using team, many branches are created and and deleted.
+Whenever my merge request is merged, I had to remove my local leftovers&amp;nbsp;manually.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote prune &amp;lt;remote name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But now I don&amp;#8217;t have to do that. With this global configuration,
+it&amp;#8217;ll be done automatically during &lt;code&gt;fetch&lt;/code&gt; or &lt;code&gt;pull&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git config --global fetch.prune &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;Auto&amp;#8221; autosquash,&amp;nbsp;autostash&lt;/h4&gt;
+&lt;p&gt;When I use &lt;code&gt;rebase&lt;/code&gt; command, I tend to use &lt;code&gt;-i --autosquash --autostash&lt;/code&gt;.
+But I didn&amp;#8217;t realize I could configure them into the global configuration&amp;nbsp;file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git config --global rebase.autosquash &lt;span class="nb"&gt;true&lt;/span&gt;
+git config --global rebase.autostash &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Better &lt;code&gt;git lola&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href="http://blog.kfish.org/2010/04/git-lola.html"&gt;&lt;code&gt;git lola&lt;/code&gt;&lt;/a&gt; is one of my favorite command.
+And I found an idea for a little&amp;nbsp;improvement.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git config --global alias.lol &lt;span class="s1"&gt;&amp;#39;log --graph --decorate --pretty=format:&amp;#39;&lt;/span&gt;%C&lt;span class="o"&gt;(&lt;/span&gt;auto&lt;span class="o"&gt;)&lt;/span&gt;%h -%d%Creset %s %Cgreen&lt;span class="o"&gt;(&lt;/span&gt;%cr&lt;span class="o"&gt;)&lt;/span&gt;%Creset&lt;span class="s1"&gt;&amp;#39; --abbrev-commit&lt;/span&gt;
+&lt;span class="s1"&gt;git config --global alias.lola &amp;#39;&lt;/span&gt;log --graph --decorate --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;&amp;#39;%C(auto)%h -%d%Creset %s %Cgreen(%cr)%Creset&amp;#39;&lt;/span&gt; --abbrev-commit --all&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The difference is custom formatting with &lt;code&gt;%C(auto)&lt;/code&gt;, which derives the original color scheme of &lt;code&gt;oneline&lt;/code&gt; option,
+and &lt;code&gt;%cr&lt;/code&gt;, which displays the commit date in relative&amp;nbsp;format.&lt;/p&gt;</content><category term="git"></category><category term="git-config"></category></entry><entry><title>Migration from VirtualBox to Hyper-V</title><link href="https://soundlake.net/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html" rel="alternate"></link><published>2018-04-20T12:05:00+02:00</published><updated>2018-04-20T12:05:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-04-20:/posts/2018/04/20/migration-from-virtualbox-to-hyper-v.html</id><summary type="html">&lt;p&gt;I was stuck in quite a problem of this&amp;nbsp;migration.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Background&amp;nbsp;Story&lt;/h3&gt;
 &lt;p&gt;The first purpose was running &lt;a href="https://docs.gitlab.com/runner/"&gt;Gitlab Runner&lt;/a&gt; in a local machine.
 Then I realise that I need &lt;a href="https://store.docker.com/editions/community/docker-ce-desktop-windows"&gt;Docker for Windows&lt;/a&gt; for the local Windows machine.
 And, of course, unfortunately, it requires &lt;a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/"&gt;Hyper-V&lt;/a&gt;.&lt;/p&gt;
