@@ -120,8 +120,8 @@ So, you need to convert it with a tool that MicroSoft provides.
 It&#8217;s called <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a>.
 You can download it, and install&nbsp;it.</p>
 <p>Open Powershell, and run this&nbsp;command.</p>
-<div class="highlight"><pre><span></span>Import-Module &#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&#39;
-Convert-VHD exported_file.vmdk target_file.vhdx -Passthru
+<div class="highlight"><pre><span></span><span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="s1">&#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&#39;</span>
+<span class="k">Convert</span><span class="o">-</span><span class="n">VHD</span> <span class="n">exported_file</span><span class="p">.</span><span class="n">vmdk</span> <span class="n">target_file</span><span class="p">.</span><span class="n">vhdx</span> <span class="o">-</span><span class="n">Passthru</span>
 </pre></div>
 
 
@@ -131,7 +131,7 @@ Because the format for the <span class="caps">VMDK</span> file from VirtualBox h
 To edit the description of <span class="caps">VMDK</span> file, this tool is&nbsp;required.</p>
 <p>You can download and unzip it, then you can use&nbsp;it.</p>
 <h4>4. Tweak the <span class="caps">VMDK</span>&nbsp;file.</h4>
-<div class="highlight"><pre><span></span>path\to\dsfok\dsfo.exe &quot;path\to\vmdk\file.vmdk&quot; 512 1024 desc.txt
+<div class="highlight"><pre><span></span><span class="n">path</span><span class="err">\</span><span class="k">to</span><span class="err">\</span><span class="n">dsfok</span><span class="err">\</span><span class="n">dsfo</span><span class="p">.</span><span class="n">exe</span> <span class="ss">&quot;path\to\vmdk\file.vmdk&quot;</span> <span class="mi">512</span> <span class="mi">1024</span> <span class="k">desc</span><span class="p">.</span><span class="n">txt</span>
 </pre></div>
 
 
@@ -139,7 +139,7 @@ To edit the description of <span class="caps">VMDK</span> file, this tool is&nbs
 Edit the file accordingly by removing or commenting out the erronous line.
 The error message from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter</a> has some&nbsp;hints.</p>
 <p>Then apply the new description file into the <span class="caps">VMDK</span>&nbsp;file.</p>
-<div class="highlight"><pre><span></span>path\to\dsfok\dsfi.exe &quot;path\to\vmdk\file.vmdk&quot; 512 1024 desc.txt
+<div class="highlight"><pre><span></span><span class="n">path</span><span class="err">\</span><span class="k">to</span><span class="err">\</span><span class="n">dsfok</span><span class="err">\</span><span class="n">dsfi</span><span class="p">.</span><span class="n">exe</span> <span class="ss">&quot;path\to\vmdk\file.vmdk&quot;</span> <span class="mi">512</span> <span class="mi">1024</span> <span class="k">desc</span><span class="p">.</span><span class="n">txt</span>
 </pre></div>
 
 

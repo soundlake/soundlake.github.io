@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2018-08-06T11:12:00+02:00</updated><entry><title>Add some skills on my Git-fu</title><link href="https://soundlake.net/posts/2018/08/06/add-some-skills-on-my-git-fu.html" rel="alternate"></link><published>2018-08-06T11:12:00+02:00</published><updated>2018-08-06T11:12:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-08-06:/posts/2018/08/06/add-some-skills-on-my-git-fu.html</id><summary type="html">&lt;p&gt;Git tips, which make the dev life&amp;nbsp;easier&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, one of my colleague introduced me &lt;a href="https://about.gitlab.com/2016/12/08/git-tips-and-tricks/"&gt;this article&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>soundlake</title><link href="https://soundlake.net/" rel="alternate"></link><link href="https://soundlake.net/feeds/all.atom.xml" rel="self"></link><id>https://soundlake.net/</id><updated>2019-05-22T18:35:00+02:00</updated><entry><title>Going deeper in Git tag</title><link href="https://soundlake.net/posts/2019/05/22/going-deeper-in-git-tag.html" rel="alternate"></link><published>2019-05-22T18:35:00+02:00</published><updated>2019-05-22T18:35:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2019-05-22:/posts/2019/05/22/going-deeper-in-git-tag.html</id><summary type="html">&lt;p&gt;Listing git&amp;nbsp;tags&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I got a chance to read &lt;a href="https://git-scm.com/docs/git-tag"&gt;&lt;code&gt;git tag&lt;/code&gt;&lt;/a&gt; command.
+We found a bug and confirmed which commit has introduced it,
+but we could not point out which released versions are&amp;nbsp;affected.&lt;/p&gt;
+&lt;p&gt;Apparently, &lt;code&gt;git tag&lt;/code&gt; command supports
+&lt;a href="https://git-scm.com/docs/git-tag#Documentation/git-tag.txt---containsltcommitgt"&gt;&lt;code&gt;--contains&lt;/code&gt;&lt;/a&gt; argument.
+This argument takes the commit&amp;nbsp;hash.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git tag --contains 12AB34
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It might show too many lines.
+Then you can use &lt;a href="https://git-scm.com/docs/git-tag#Documentation/git-tag.txt---list"&gt;&lt;code&gt;--list&lt;/code&gt;&lt;/a&gt;
+(&lt;code&gt;-l&lt;/code&gt; in short) argument
+which allows you to filter the tags with pattern. For&amp;nbsp;example,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git tag --contains 12AB34 --list &lt;span class="m"&gt;4&lt;/span&gt;.2.*
+&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="git-tag"></category></entry><entry><title>Add some skills on my Git-fu</title><link href="https://soundlake.net/posts/2018/08/06/add-some-skills-on-my-git-fu.html" rel="alternate"></link><published>2018-08-06T11:12:00+02:00</published><updated>2018-08-06T11:12:00+02:00</updated><author><name>soundlake</name></author><id>tag:soundlake.net,2018-08-06:/posts/2018/08/06/add-some-skills-on-my-git-fu.html</id><summary type="html">&lt;p&gt;Git tips, which make the dev life&amp;nbsp;easier&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, one of my colleague introduced me &lt;a href="https://about.gitlab.com/2016/12/08/git-tips-and-tricks/"&gt;this article&lt;/a&gt;.
 Apparently, it&amp;#8217;s written already 2 years ago. There are something I already know, but also are still some new and good tips for&amp;nbsp;me.&lt;/p&gt;
 &lt;h3&gt;Global&amp;nbsp;Configurations&lt;/h3&gt;
 &lt;h4&gt;Deleting a local branch which is already removed in the&amp;nbsp;remote&lt;/h4&gt;
@@ -57,8 +72,8 @@ So, you need to convert it with a tool that MicroSoft provides.
 It&amp;#8217;s called &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt;.
 You can download it, and install&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;Open Powershell, and run this&amp;nbsp;command.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Import-Module &amp;#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&amp;#39;
-Convert-VHD exported_file.vmdk target_file.vhdx -Passthru
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Import&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Module&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;Convert&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;VHD&lt;/span&gt; &lt;span class="n"&gt;exported_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vmdk&lt;/span&gt; &lt;span class="n"&gt;target_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vhdx&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Passthru&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -68,7 +83,7 @@ Because the format for the &lt;span class="caps"&gt;VMDK&lt;/span&gt; file from 
 To edit the description of &lt;span class="caps"&gt;VMDK&lt;/span&gt; file, this tool is&amp;nbsp;required.&lt;/p&gt;
 &lt;p&gt;You can download and unzip it, then you can use&amp;nbsp;it.&lt;/p&gt;
 &lt;h4&gt;4. Tweak the &lt;span class="caps"&gt;VMDK&lt;/span&gt;&amp;nbsp;file.&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path\to\dsfok\dsfo.exe &amp;quot;path\to\vmdk\file.vmdk&amp;quot; 512 1024 desc.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;dsfok&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;dsfo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;path\to\vmdk\file.vmdk&amp;quot;&lt;/span&gt; &lt;span class="mi"&gt;512&lt;/span&gt; &lt;span class="mi"&gt;1024&lt;/span&gt; &lt;span class="k"&gt;desc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -76,7 +91,7 @@ To edit the description of &lt;span class="caps"&gt;VMDK&lt;/span&gt; file, this
 Edit the file accordingly by removing or commenting out the erronous line.
 The error message from &lt;a href="http://www.microsoft.com/en-us/download/details.aspx?id=42497"&gt;Microsoft Virtual Machine Converter&lt;/a&gt; has some&amp;nbsp;hints.&lt;/p&gt;
 &lt;p&gt;Then apply the new description file into the &lt;span class="caps"&gt;VMDK&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;path\to\dsfok\dsfi.exe &amp;quot;path\to\vmdk\file.vmdk&amp;quot; 512 1024 desc.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;dsfok&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;dsfi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;path\to\vmdk\file.vmdk&amp;quot;&lt;/span&gt; &lt;span class="mi"&gt;512&lt;/span&gt; &lt;span class="mi"&gt;1024&lt;/span&gt; &lt;span class="k"&gt;desc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -255,8 +270,8 @@ running&amp;nbsp;this.&lt;/p&gt;
 commonly used for &lt;a href="https://pip.pypa.io"&gt;pip&lt;/a&gt;&amp;#8216;s dependency&amp;nbsp;list.&lt;/p&gt;
 &lt;p&gt;This is the content of the file. This is simple file, and each line has each
 &lt;a href="https://www.python.org"&gt;Python&lt;/a&gt; module&amp;nbsp;name.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican
-markdown
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;markdown&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -318,25 +333,25 @@ git init
 dashboard. It&amp;#8217;s on &lt;code&gt;https://travis-ci.org/profile/{Github Username}&lt;/code&gt;. In this
 page, you can activate the continuous integration by your &lt;a href="https://github.com"&gt;Github&lt;/a&gt;&amp;nbsp;repository.&lt;/p&gt;
 &lt;p&gt;Now, you need to create &lt;code&gt;.travis.yml&lt;/code&gt; file in your&amp;nbsp;repository.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;language&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;
+&lt;span class="nt"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;3.6&amp;#39;&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;branches&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;only&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;only&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;install&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;install&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;script&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;make publish&lt;/span&gt;
 
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;deploy&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;provider&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pages&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;skip-cleanup&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;github-token&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;$GITHUB_TOKEN&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;keep-history&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
-  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;local-dir&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output&lt;/span&gt;
+&lt;span class="nt"&gt;deploy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pages&lt;/span&gt;
+  &lt;span class="nt"&gt;skip-cleanup&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+  &lt;span class="nt"&gt;github-token&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;$GITHUB_TOKEN&lt;/span&gt;
+  &lt;span class="nt"&gt;keep-history&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+  &lt;span class="nt"&gt;local-dir&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;on&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;branch&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+      &lt;span class="nt"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -392,60 +407,60 @@ typing in the following&amp;nbsp;command.&lt;/p&gt;
 
 &lt;p&gt;However, the directory does not exist either by default. You will see the
 following error&amp;nbsp;message.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;New-Item : Could not find a part of the path
-&amp;#39;C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&amp;#39;.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;New&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Item&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Could&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;part&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;path&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;You can easily create a directory with &lt;code&gt;mkdir&lt;/code&gt;. After creating the directory,
 then try &lt;code&gt;New-Item&lt;/code&gt; command once again. Then, you have your own PowerShell
 profile. In this file, you can add the following line, then restart the&amp;nbsp;PowerShell.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Path&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SYNOPSIS&lt;/span&gt;
-      &lt;span class="nx"&gt;Adds&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;Directory&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;Current&lt;/span&gt; &lt;span class="nx"&gt;Path&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;DESCRIPTION&lt;/span&gt;
-      &lt;span class="nx"&gt;Add&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;directory&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;current&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;  &lt;span class="nx"&gt;This&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;useful&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt;
-      &lt;span class="nx"&gt;temporary&lt;/span&gt; &lt;span class="nx"&gt;changes&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;when&lt;/span&gt; &lt;span class="nx"&gt;run&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="nx"&gt;your&lt;/span&gt;
-      &lt;span class="nx"&gt;profile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nx"&gt;adjusting&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;within&lt;/span&gt; &lt;span class="nx"&gt;your&lt;/span&gt; &lt;span class="nx"&gt;powershell&lt;/span&gt;
-      &lt;span class="nx"&gt;prompt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;EXAMPLE&lt;/span&gt;
-      &lt;span class="nx"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Directory&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:\Program Files\Notepad++&amp;quot;&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;PARAMETER&lt;/span&gt; &lt;span class="nx"&gt;Directory&lt;/span&gt;
-      &lt;span class="nx"&gt;The&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;directory&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;add&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;current&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;function&lt;/span&gt; &lt;span class="nv"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Path&lt;/span&gt; {
+  &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;#
+    .&lt;span class="nv"&gt;SYNOPSIS&lt;/span&gt;
+      &lt;span class="nv"&gt;Adds&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;Directory&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;Current&lt;/span&gt; &lt;span class="nv"&gt;Path&lt;/span&gt;
+    .&lt;span class="nv"&gt;DESCRIPTION&lt;/span&gt;
+      &lt;span class="nv"&gt;Add&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;directory&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;current&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt;.  &lt;span class="nv"&gt;This&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;useful&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt;
+      &lt;span class="nv"&gt;temporary&lt;/span&gt; &lt;span class="nv"&gt;changes&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt; &lt;span class="nv"&gt;or&lt;/span&gt;, &lt;span class="nv"&gt;when&lt;/span&gt; &lt;span class="nv"&gt;run&lt;/span&gt; &lt;span class="nv"&gt;from&lt;/span&gt; &lt;span class="nv"&gt;your&lt;/span&gt;
+      &lt;span class="nv"&gt;profile&lt;/span&gt;, &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;adjusting&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt; &lt;span class="nv"&gt;within&lt;/span&gt; &lt;span class="nv"&gt;your&lt;/span&gt; &lt;span class="nv"&gt;powershell&lt;/span&gt;
+      &lt;span class="nv"&gt;prompt&lt;/span&gt;.
+    .&lt;span class="nv"&gt;EXAMPLE&lt;/span&gt;
+      &lt;span class="nv"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Directory&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;C:\Program Files\Notepad++&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    .&lt;span class="nv"&gt;PARAMETER&lt;/span&gt; &lt;span class="nv"&gt;Directory&lt;/span&gt;
+      &lt;span class="nv"&gt;The&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;directory&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;add&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;current&lt;/span&gt; &lt;span class="nv"&gt;path&lt;/span&gt;.
+  #&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 
-  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;CmdletBinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
-  &lt;span class="nx"&gt;param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-      &lt;span class="nx"&gt;Mandatory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-      &lt;span class="nx"&gt;ValueFromPipeline&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-      &lt;span class="nx"&gt;ValueFromPipelineByPropertyName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-      &lt;span class="nx"&gt;HelpMessage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;What directory would you like to add?&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;Alias&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;dir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[]]&lt;/span&gt;&lt;span class="nx"&gt;$Directory&lt;/span&gt;
-  &lt;span class="p"&gt;)&lt;/span&gt;
+  [&lt;span class="nv"&gt;CmdletBinding&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;]
+  &lt;span class="nv"&gt;param&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;
+    [&lt;span class="nv"&gt;Parameter&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;
+      &lt;span class="nv"&gt;Mandatory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;True&lt;/span&gt;,
+      &lt;span class="nv"&gt;ValueFromPipeline&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;True&lt;/span&gt;,
+      &lt;span class="nv"&gt;ValueFromPipelineByPropertyName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;True&lt;/span&gt;,
+      &lt;span class="nv"&gt;HelpMessage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;What directory would you like to add?&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;]
+    [&lt;span class="nv"&gt;Alias&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;dir&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;]
+    [&lt;span class="nv"&gt;string&lt;/span&gt;[]]&lt;span class="mh"&gt;$D&lt;/span&gt;&lt;span class="nv"&gt;irectory&lt;/span&gt;
+  &lt;span class="ss"&gt;)&lt;/span&gt;
 
-  &lt;span class="nx"&gt;PROCESS&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;$Path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;$env&lt;/span&gt;:&lt;span class="kt"&gt;PATH.Split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;PROCESS&lt;/span&gt; {
+    $&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mh"&gt;$e&lt;/span&gt;&lt;span class="nv"&gt;nv&lt;/span&gt;:&lt;span class="nv"&gt;PATH&lt;/span&gt;.&lt;span class="nv"&gt;Split&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
 
-    &lt;span class="nx"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$dir&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;$Directory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;contains&lt;/span&gt; &lt;span class="nx"&gt;$dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="nx"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$dir is already present in PATH&amp;quot;&lt;/span&gt;
-      &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Path&lt;/span&gt; &lt;span class="nx"&gt;$dir&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-          &lt;span class="nx"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$dir does not exist in the filesystem&amp;quot;&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-          &lt;span class="nx"&gt;$Path&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;$dir&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-      &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nv"&gt;foreach&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;$d&lt;/span&gt;&lt;span class="nv"&gt;ir&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="mh"&gt;$D&lt;/span&gt;&lt;span class="nv"&gt;irectory&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; {
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;$&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;contains&lt;/span&gt; &lt;span class="mh"&gt;$d&lt;/span&gt;&lt;span class="nv"&gt;ir&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; {
+        &lt;span class="nv"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;$dir is already present in PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+      } &lt;span class="k"&gt;else&lt;/span&gt; {
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="mh"&gt;$d&lt;/span&gt;&lt;span class="nv"&gt;ir&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt; {
+          &lt;span class="nv"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;$dir does not exist in the filesystem&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        } &lt;span class="k"&gt;else&lt;/span&gt; {
+          $&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mh"&gt;$d&lt;/span&gt;&lt;span class="nv"&gt;ir&lt;/span&gt;
+        }
+      }
+    }
 
-    &lt;span class="nx"&gt;$env&lt;/span&gt;:&lt;span class="kt"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="nx"&gt;Join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;$Path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="mh"&gt;$e&lt;/span&gt;&lt;span class="nv"&gt;nv&lt;/span&gt;:&lt;span class="nv"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; [&lt;span class="nv"&gt;String&lt;/span&gt;]::&lt;span class="nv"&gt;Join&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;, $&lt;span class="nv"&gt;Path&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+  }
+}
 
-&lt;span class="nx"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;Directory&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C:\Program Files (x86)\Windows Kits\10\bin\x64\&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;Add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Directory&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;C:\Program Files (x86)\Windows Kits\10\bin\x64\&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

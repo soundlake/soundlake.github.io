@@ -121,60 +121,60 @@ typing in the following&nbsp;command.</p>
 
 <p>However, the directory does not exist either by default. You will see the
 following error&nbsp;message.</p>
-<div class="highlight"><pre><span></span>New-Item : Could not find a part of the path
-&#39;C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#39;.
+<div class="highlight"><pre><span></span><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Could</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">path</span><span class="w"></span>
+<span class="s1">&#39;C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#39;</span><span class="p">.</span><span class="w"></span>
 </pre></div>
 
 
 <p>You can easily create a directory with <code>mkdir</code>. After creating the directory,
 then try <code>New-Item</code> command once again. Then, you have your own PowerShell
 profile. In this file, you can add the following line, then restart the&nbsp;PowerShell.</p>
-<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">Add</span><span class="o">-</span><span class="nx">Path</span> <span class="p">{</span>
-  <span class="o">&lt;</span><span class="err">#</span>
-    <span class="p">.</span><span class="nx">SYNOPSIS</span>
-      <span class="nx">Adds</span> <span class="nx">a</span> <span class="nx">Directory</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">Current</span> <span class="nx">Path</span>
-    <span class="p">.</span><span class="nx">DESCRIPTION</span>
-      <span class="nx">Add</span> <span class="nx">a</span> <span class="nx">directory</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">path</span><span class="p">.</span>  <span class="nx">This</span> <span class="nx">is</span> <span class="nx">useful</span> <span class="k">for</span>
-      <span class="nx">temporary</span> <span class="nx">changes</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">path</span> <span class="nx">or</span><span class="p">,</span> <span class="nx">when</span> <span class="nx">run</span> <span class="nx">from</span> <span class="nx">your</span>
-      <span class="nx">profile</span><span class="p">,</span> <span class="k">for</span> <span class="nx">adjusting</span> <span class="nx">the</span> <span class="nx">path</span> <span class="nx">within</span> <span class="nx">your</span> <span class="nx">powershell</span>
-      <span class="nx">prompt</span><span class="p">.</span>
-    <span class="p">.</span><span class="nx">EXAMPLE</span>
-      <span class="nx">Add</span><span class="o">-</span><span class="nx">Path</span> <span class="o">-</span><span class="nx">Directory</span> <span class="s2">&quot;C:\Program Files\Notepad++&quot;</span>
-    <span class="p">.</span><span class="nx">PARAMETER</span> <span class="nx">Directory</span>
-      <span class="nx">The</span> <span class="nx">name</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">directory</span> <span class="nx">to</span> <span class="nx">add</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">path</span><span class="p">.</span>
-  <span class="err">#</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><span class="nv">function</span> <span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> {
+  <span class="o">&lt;</span>#
+    .<span class="nv">SYNOPSIS</span>
+      <span class="nv">Adds</span> <span class="nv">a</span> <span class="nv">Directory</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">Current</span> <span class="nv">Path</span>
+    .<span class="nv">DESCRIPTION</span>
+      <span class="nv">Add</span> <span class="nv">a</span> <span class="nv">directory</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">path</span>.  <span class="nv">This</span> <span class="nv">is</span> <span class="nv">useful</span> <span class="k">for</span>
+      <span class="nv">temporary</span> <span class="nv">changes</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">path</span> <span class="nv">or</span>, <span class="nv">when</span> <span class="nv">run</span> <span class="nv">from</span> <span class="nv">your</span>
+      <span class="nv">profile</span>, <span class="k">for</span> <span class="nv">adjusting</span> <span class="nv">the</span> <span class="nv">path</span> <span class="nv">within</span> <span class="nv">your</span> <span class="nv">powershell</span>
+      <span class="nv">prompt</span>.
+    .<span class="nv">EXAMPLE</span>
+      <span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> <span class="o">-</span><span class="nv">Directory</span> <span class="s2">&quot;</span><span class="s">C:\Program Files\Notepad++</span><span class="s2">&quot;</span>
+    .<span class="nv">PARAMETER</span> <span class="nv">Directory</span>
+      <span class="nv">The</span> <span class="nv">name</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">directory</span> <span class="nv">to</span> <span class="nv">add</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">path</span>.
+  #<span class="o">&gt;</span>
 
-  <span class="p">[</span><span class="nx">CmdletBinding</span><span class="p">()]</span>
-  <span class="nx">param</span> <span class="p">(</span>
-    <span class="p">[</span><span class="nx">Parameter</span><span class="p">(</span>
-      <span class="nx">Mandatory</span><span class="o">=</span><span class="nx">$True</span><span class="p">,</span>
-      <span class="nx">ValueFromPipeline</span><span class="o">=</span><span class="nx">$True</span><span class="p">,</span>
-      <span class="nx">ValueFromPipelineByPropertyName</span><span class="o">=</span><span class="nx">$True</span><span class="p">,</span>
-      <span class="nx">HelpMessage</span><span class="o">=</span><span class="s1">&#39;What directory would you like to add?&#39;</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nx">Alias</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">)]</span>
-    <span class="p">[</span><span class="kt">string</span><span class="p">[]]</span><span class="nx">$Directory</span>
-  <span class="p">)</span>
+  [<span class="nv">CmdletBinding</span><span class="ss">()</span>]
+  <span class="nv">param</span> <span class="ss">(</span>
+    [<span class="nv">Parameter</span><span class="ss">(</span>
+      <span class="nv">Mandatory</span><span class="o">=</span>$<span class="nv">True</span>,
+      <span class="nv">ValueFromPipeline</span><span class="o">=</span>$<span class="nv">True</span>,
+      <span class="nv">ValueFromPipelineByPropertyName</span><span class="o">=</span>$<span class="nv">True</span>,
+      <span class="nv">HelpMessage</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">What directory would you like to add?</span><span class="s1">&#39;</span><span class="ss">)</span>]
+    [<span class="nv">Alias</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">dir</span><span class="s1">&#39;</span><span class="ss">)</span>]
+    [<span class="nv">string</span>[]]<span class="mh">$D</span><span class="nv">irectory</span>
+  <span class="ss">)</span>
 
-  <span class="nx">PROCESS</span> <span class="p">{</span>
-    <span class="nx">$Path</span> <span class="o">=</span> <span class="nx">$env</span>:<span class="kt">PATH.Split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+  <span class="nv">PROCESS</span> {
+    $<span class="nv">Path</span> <span class="o">=</span> <span class="mh">$e</span><span class="nv">nv</span>:<span class="nv">PATH</span>.<span class="nv">Split</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span><span class="ss">)</span>
 
-    <span class="nx">foreach</span> <span class="p">(</span><span class="nx">$dir</span> <span class="k">in</span> <span class="nx">$Directory</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">$Path</span> <span class="o">-</span><span class="nx">contains</span> <span class="nx">$dir</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">Write</span><span class="o">-</span><span class="nx">Verbose</span> <span class="s2">&quot;$dir is already present in PATH&quot;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="nx">not</span> <span class="p">(</span><span class="nx">Test</span><span class="o">-</span><span class="nx">Path</span> <span class="nx">$dir</span><span class="p">))</span> <span class="p">{</span>
-          <span class="nx">Write</span><span class="o">-</span><span class="nx">Verbose</span> <span class="s2">&quot;$dir does not exist in the filesystem&quot;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nx">$Path</span> <span class="o">+=</span> <span class="nx">$dir</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="nv">foreach</span> <span class="ss">(</span><span class="mh">$d</span><span class="nv">ir</span> <span class="nv">in</span> <span class="mh">$D</span><span class="nv">irectory</span><span class="ss">)</span> {
+      <span class="k">if</span> <span class="ss">(</span>$<span class="nv">Path</span> <span class="o">-</span><span class="nv">contains</span> <span class="mh">$d</span><span class="nv">ir</span><span class="ss">)</span> {
+        <span class="nv">Write</span><span class="o">-</span><span class="nv">Verbose</span> <span class="s2">&quot;</span><span class="s">$dir is already present in PATH</span><span class="s2">&quot;</span>
+      } <span class="k">else</span> {
+        <span class="k">if</span> <span class="ss">(</span><span class="o">-</span><span class="nv">not</span> <span class="ss">(</span><span class="nv">Test</span><span class="o">-</span><span class="nv">Path</span> <span class="mh">$d</span><span class="nv">ir</span><span class="ss">))</span> {
+          <span class="nv">Write</span><span class="o">-</span><span class="nv">Verbose</span> <span class="s2">&quot;</span><span class="s">$dir does not exist in the filesystem</span><span class="s2">&quot;</span>
+        } <span class="k">else</span> {
+          $<span class="nv">Path</span> <span class="o">+=</span> <span class="mh">$d</span><span class="nv">ir</span>
+        }
+      }
+    }
 
-    <span class="nx">$env</span>:<span class="kt">PATH</span> <span class="o">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span><span class="o">::</span><span class="nx">Join</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="nx">$Path</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+    <span class="mh">$e</span><span class="nv">nv</span>:<span class="nv">PATH</span> <span class="o">=</span> [<span class="nv">String</span>]::<span class="nv">Join</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span>, $<span class="nv">Path</span><span class="ss">)</span>
+  }
+}
 
-<span class="nx">Add</span><span class="o">-</span><span class="nx">Path</span> <span class="o">-</span><span class="nx">Directory</span> <span class="s2">&quot;C:\Program Files (x86)\Windows Kits\10\bin\x64\&quot;</span>
+<span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> <span class="o">-</span><span class="nv">Directory</span> <span class="s2">&quot;</span><span class="s">C:\Program Files (x86)\Windows Kits\10\bin\x64\</span><span class="s2">&quot;</span>
 </pre></div>
 
 

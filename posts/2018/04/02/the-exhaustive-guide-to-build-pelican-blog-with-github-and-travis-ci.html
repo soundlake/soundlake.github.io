@@ -156,8 +156,8 @@ running&nbsp;this.</p>
 commonly used for <a href="https://pip.pypa.io">pip</a>&#8216;s dependency&nbsp;list.</p>
 <p>This is the content of the file. This is simple file, and each line has each
 <a href="https://www.python.org">Python</a> module&nbsp;name.</p>
-<div class="highlight"><pre><span></span>pelican
-markdown
+<div class="highlight"><pre><span></span><span class="n">pelican</span>
+<span class="n">markdown</span>
 </pre></div>
 
 
@@ -219,25 +219,25 @@ git init
 dashboard. It&#8217;s on <code>https://travis-ci.org/profile/{Github Username}</code>. In this
 page, you can activate the continuous integration by your <a href="https://github.com">Github</a>&nbsp;repository.</p>
 <p>Now, you need to create <code>.travis.yml</code> file in your&nbsp;repository.</p>
-<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">language</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
-<span class="l l-Scalar l-Scalar-Plain">python</span><span class="p p-Indicator">:</span>
+<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="nt">python</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;3.6&#39;</span>
-<span class="l l-Scalar l-Scalar-Plain">branches</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">only</span><span class="p p-Indicator">:</span>
+<span class="nt">branches</span><span class="p">:</span>
+  <span class="nt">only</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
-<span class="l l-Scalar l-Scalar-Plain">install</span><span class="p p-Indicator">:</span>
+<span class="nt">install</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<span class="l l-Scalar l-Scalar-Plain">script</span><span class="p p-Indicator">:</span>
+<span class="nt">script</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">make publish</span>
 
-<span class="l l-Scalar l-Scalar-Plain">deploy</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">provider</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pages</span>
-  <span class="l l-Scalar l-Scalar-Plain">skip-cleanup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="l l-Scalar l-Scalar-Plain">github-token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span>
-  <span class="l l-Scalar l-Scalar-Plain">keep-history</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="l l-Scalar l-Scalar-Plain">local-dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">output</span>
+<span class="nt">deploy</span><span class="p">:</span>
+  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pages</span>
+  <span class="nt">skip-cleanup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">github-token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span>
+  <span class="nt">keep-history</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">local-dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output</span>
     <span class="l l-Scalar l-Scalar-Plain">on</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">branch</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+      <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
 </pre></div>
 
 
