@@ -61,7 +61,7 @@ TYPOGRIFY = True
 THEME = 'themes/pelican-blue'
 
 SIDEBAR_DIGEST = 'Developer / Programmer / Musician'
-FAVICON = 'favicon.png'
+FAVICON = '/favicon.png'
 TWITTER_USERNAME = 'sound_lake'
 
 # URLs
