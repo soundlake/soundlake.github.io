@@ -110,6 +110,11 @@ code {
   border-radius: 5px;
   background: #eee;
 }
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background: inherit;
+}
 .highlight pre {
   font-size: 14px;
   overflow: auto;
