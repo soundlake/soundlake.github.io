@@ -17,11 +17,11 @@
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
         <!-- Style Meta Data -->
-        <link rel="stylesheet" href="https://soundlake.net/theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="https://soundlake.net/theme/css/pygments.css" type="text/css"/>
+        <link rel="stylesheet" href="https://soundlake.xyz/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://soundlake.xyz/theme/css/pygments.css" type="text/css"/>
 
         <!-- Feed Meta Data -->
-            <link href="https://soundlake.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+            <link href="https://soundlake.xyz/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
                   title="soundlake ATOM Feed"/>
 
         <!-- Twitter Feed -->
@@ -36,7 +36,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
     <meta name="twitter:creator" content="sound_lake">
-    <meta name="twitter:url" content="https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html">
+    <meta name="twitter:url" content="https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html">
     <meta name="twitter:title" content="soundlake ~ Add Binary Path in PowerShell">
     <meta name="twitter:description" content="Configure your PATH environment variable in PowerShell">
 
@@ -49,30 +49,30 @@
 <body>
 <!-- Sidebar -->
 <aside>
-    <h1><a href="https://soundlake.net/">soundlake</a></h1>
+    <h1><a href="https://soundlake.xyz/">soundlake</a></h1>
         <p>Developer / Programmer / Musician</p>
     <br>
 
     <nav class="nav">
         <ul class="list-bare">
 
-                <li><a class="nav__link" href="https://soundlake.net">Blog</a></li>
+                <li><a class="nav__link" href="https://soundlake.xyz">Blog</a></li>
 
-                <li><a class="nav__link" href="https://soundlake.net/pages/about.html">About</a></li>
-                <li><a class="nav__link" href="https://soundlake.net/pages/resume.html">Short&nbsp;Resume</a></li>
+                <li><a class="nav__link" href="https://soundlake.xyz/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://soundlake.xyz/pages/resume.html">Short&nbsp;Resume</a></li>
 
         </ul>
     </nav>
 
     <p class="social">
-<a href="https://github.com/soundlake" target="_blank"><i class="fab fa-github fa-lg"></i></a><a href="https://bitbucket.org/soundlake" target="_blank"><i class="fab fa-bitbucket fa-lg"></i></a><a href="https://gitlab.com/soundlake" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a><a href="https://stackoverflow.com/users/4276533/soundlake" target="_blank"><i class="fab fa-stack-overflow fa-lg"></i></a><a href="https://twitter.com/sound_lake" target="_blank"><i class="fab fa-twitter fa-lg"></i></a><a href="https://sound-lake.tumblr.com" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a><a href="https://t.me/soundlake" target="_blank"><i class="fab fa-telegram fa-lg"></i></a><a href="https://soundcloud.com/soundlake" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>            <a href="https://soundlake.net/feeds/all.atom.xml" rel="alternate">
+<a href="https://github.com/soundlake" target="_blank"><i class="fab fa-github fa-lg"></i></a><a href="https://bitbucket.org/soundlake" target="_blank"><i class="fab fa-bitbucket fa-lg"></i></a><a href="https://gitlab.com/soundlake" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a><a href="https://stackoverflow.com/users/4276533/soundlake" target="_blank"><i class="fab fa-stack-overflow fa-lg"></i></a><a href="https://twitter.com/sound_lake" target="_blank"><i class="fab fa-twitter fa-lg"></i></a><a href="https://sound-lake.tumblr.com" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a><a href="https://t.me/soundlake" target="_blank"><i class="fab fa-telegram fa-lg"></i></a><a href="https://soundcloud.com/soundlake" target="_blank"><i class="fab fa-soundcloud fa-lg"></i></a>            <a href="https://soundlake.xyz/feeds/all.atom.xml" rel="alternate">
                 <i class="fas fa-rss fa-lg"></i></a>
     </p>
 
         <h2>Categories</h2>
         <ul class="navbar">
                 <li class="active"><a
-                        href="https://soundlake.net/category/dev.html">Dev</a></li>
+                        href="https://soundlake.xyz/category/dev.html">Dev</a></li>
         </ul>
 
         <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
@@ -92,7 +92,7 @@
 <article>
     <section id="content">
         <article>
-            <h2 class="post_title post_detail"><a href="https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html" rel="bookmark"
+            <h2 class="post_title post_detail"><a href="https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html" rel="bookmark"
                                                   title="Permalink to Add Binary Path in PowerShell">Add Binary Path in&nbsp;PowerShell</a></h2>
             <div class="entry-content blog-post">
                 <p>Recently, I need to use <code>makecert</code> command in PowerShell, but <code>makecert.exe</code> wasn&#8217;t
@@ -104,79 +104,74 @@ profile&nbsp;file.</p>
 <code>C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code>.
 It is stored in <code>$profile</code> variable. You can check its value by simply typing the
 variable in&nbsp;PowerShell.</p>
-<div class="highlight"><pre><span></span><span class="nv">$profile</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">$profile</span>
+</code></pre></div>
 
 <p>But the file does not exist by default. You can check if the file exists with
 typing in the following&nbsp;command.</p>
-<div class="highlight"><pre><span></span>test-path <span class="nv">$profile</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>test-path <span class="nv">$profile</span>
+</code></pre></div>
 
 <p>There&#8217;s no <code>touch</code> command in PowerShell. Instead, there is <code>new-item</code> command.</p>
-<div class="highlight"><pre><span></span>New-Item <span class="nv">$profile</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>New-Item <span class="nv">$profile</span>
+</code></pre></div>
 
 <p>However, the directory does not exist either by default. You will see the
 following error&nbsp;message.</p>
-<div class="highlight"><pre><span></span><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Could</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">path</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">Could</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">path</span><span class="w"></span>
 <span class="s1">&#39;C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#39;</span><span class="p">.</span><span class="w"></span>
-</pre></div>
-
+</code></pre></div>
 
 <p>You can easily create a directory with <code>mkdir</code>. After creating the directory,
 then try <code>New-Item</code> command once again. Then, you have your own PowerShell
 profile. In this file, you can add the following line, then restart the&nbsp;PowerShell.</p>
-<div class="highlight"><pre><span></span><span class="nv">function</span> <span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> {
-  <span class="o">&lt;</span>#
-    .<span class="nv">SYNOPSIS</span>
-      <span class="nv">Adds</span> <span class="nv">a</span> <span class="nv">Directory</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">Current</span> <span class="nv">Path</span>
-    .<span class="nv">DESCRIPTION</span>
-      <span class="nv">Add</span> <span class="nv">a</span> <span class="nv">directory</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">path</span>.  <span class="nv">This</span> <span class="nv">is</span> <span class="nv">useful</span> <span class="k">for</span>
-      <span class="nv">temporary</span> <span class="nv">changes</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">path</span> <span class="nv">or</span>, <span class="nv">when</span> <span class="nv">run</span> <span class="nv">from</span> <span class="nv">your</span>
-      <span class="nv">profile</span>, <span class="k">for</span> <span class="nv">adjusting</span> <span class="nv">the</span> <span class="nv">path</span> <span class="nv">within</span> <span class="nv">your</span> <span class="nv">powershell</span>
-      <span class="nv">prompt</span>.
-    .<span class="nv">EXAMPLE</span>
-      <span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> <span class="o">-</span><span class="nv">Directory</span> <span class="s2">&quot;</span><span class="s">C:\Program Files\Notepad++</span><span class="s2">&quot;</span>
-    .<span class="nv">PARAMETER</span> <span class="nv">Directory</span>
-      <span class="nv">The</span> <span class="nv">name</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">directory</span> <span class="nv">to</span> <span class="nv">add</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">path</span>.
-  #<span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="k">Add</span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">#</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="n">SYNOPSIS</span><span class="w"></span>
+<span class="w">      </span><span class="n">Adds</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Directory</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">Current</span><span class="w"> </span><span class="k">Path</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="n">DESCRIPTION</span><span class="w"></span>
+<span class="w">      </span><span class="k">Add</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">path</span><span class="p">.</span><span class="w">  </span><span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">useful</span><span class="w"> </span><span class="k">for</span><span class="w"></span>
+<span class="w">      </span><span class="k">temporary</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="ow">or</span><span class="p">,</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">your</span><span class="w"></span>
+<span class="w">      </span><span class="n">profile</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">adjusting</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="k">within</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">powershell</span><span class="w"></span>
+<span class="w">      </span><span class="n">prompt</span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="n">EXAMPLE</span><span class="w"></span>
+<span class="w">      </span><span class="k">Add</span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="o">-</span><span class="n">Directory</span><span class="w"> </span><span class="ss">&quot;C:\Program Files\Notepad++&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="k">PARAMETER</span><span class="w"> </span><span class="n">Directory</span><span class="w"></span>
+<span class="w">      </span><span class="n">The</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">path</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="o">&gt;</span><span class="w"></span>
 
-  [<span class="nv">CmdletBinding</span><span class="ss">()</span>]
-  <span class="nv">param</span> <span class="ss">(</span>
-    [<span class="nv">Parameter</span><span class="ss">(</span>
-      <span class="nv">Mandatory</span><span class="o">=</span>$<span class="nv">True</span>,
-      <span class="nv">ValueFromPipeline</span><span class="o">=</span>$<span class="nv">True</span>,
-      <span class="nv">ValueFromPipelineByPropertyName</span><span class="o">=</span>$<span class="nv">True</span>,
-      <span class="nv">HelpMessage</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">What directory would you like to add?</span><span class="s1">&#39;</span><span class="ss">)</span>]
-    [<span class="nv">Alias</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">dir</span><span class="s1">&#39;</span><span class="ss">)</span>]
-    [<span class="nv">string</span>[]]<span class="mh">$D</span><span class="nv">irectory</span>
-  <span class="ss">)</span>
+<span class="w">  </span><span class="o">[</span><span class="n">CmdletBinding()</span><span class="o">]</span><span class="w"></span>
+<span class="w">  </span><span class="n">param</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">Parameter(</span>
+<span class="n">      Mandatory=$True,</span>
+<span class="n">      ValueFromPipeline=$True,</span>
+<span class="n">      ValueFromPipelineByPropertyName=$True,</span>
+<span class="n">      HelpMessage=&#39;What directory would you like to add?&#39;)</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">Alias(&#39;dir&#39;)</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">string[</span><span class="o">]</span><span class="err">]$</span><span class="n">Directory</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="w"></span>
 
-  <span class="nv">PROCESS</span> {
-    $<span class="nv">Path</span> <span class="o">=</span> <span class="mh">$e</span><span class="nv">nv</span>:<span class="nv">PATH</span>.<span class="nv">Split</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span><span class="ss">)</span>
+<span class="w">  </span><span class="n">PROCESS</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="nl">env</span><span class="p">:</span><span class="k">PATH</span><span class="p">.</span><span class="n">Split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span><span class="w"></span>
 
-    <span class="nv">foreach</span> <span class="ss">(</span><span class="mh">$d</span><span class="nv">ir</span> <span class="nv">in</span> <span class="mh">$D</span><span class="nv">irectory</span><span class="ss">)</span> {
-      <span class="k">if</span> <span class="ss">(</span>$<span class="nv">Path</span> <span class="o">-</span><span class="nv">contains</span> <span class="mh">$d</span><span class="nv">ir</span><span class="ss">)</span> {
-        <span class="nv">Write</span><span class="o">-</span><span class="nv">Verbose</span> <span class="s2">&quot;</span><span class="s">$dir is already present in PATH</span><span class="s2">&quot;</span>
-      } <span class="k">else</span> {
-        <span class="k">if</span> <span class="ss">(</span><span class="o">-</span><span class="nv">not</span> <span class="ss">(</span><span class="nv">Test</span><span class="o">-</span><span class="nv">Path</span> <span class="mh">$d</span><span class="nv">ir</span><span class="ss">))</span> {
-          <span class="nv">Write</span><span class="o">-</span><span class="nv">Verbose</span> <span class="s2">&quot;</span><span class="s">$dir does not exist in the filesystem</span><span class="s2">&quot;</span>
-        } <span class="k">else</span> {
-          $<span class="nv">Path</span> <span class="o">+=</span> <span class="mh">$d</span><span class="nv">ir</span>
-        }
-      }
-    }
+<span class="w">    </span><span class="n">foreach</span><span class="w"> </span><span class="p">(</span><span class="err">$</span><span class="n">dir</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="err">$</span><span class="n">Directory</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">$</span><span class="k">Path</span><span class="w"> </span><span class="o">-</span><span class="k">contains</span><span class="w"> </span><span class="err">$</span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">Write</span><span class="o">-</span><span class="n">Verbose</span><span class="w"> </span><span class="ss">&quot;$dir is already present in PATH&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="ow">not</span><span class="w"> </span><span class="p">(</span><span class="n">Test</span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">dir</span><span class="p">))</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">          </span><span class="k">Write</span><span class="o">-</span><span class="n">Verbose</span><span class="w"> </span><span class="ss">&quot;$dir does not exist in the filesystem&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">          </span><span class="err">$</span><span class="k">Path</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="err">$</span><span class="n">dir</span><span class="w"></span>
+<span class="w">        </span><span class="err">}</span><span class="w"></span>
+<span class="w">      </span><span class="err">}</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
 
-    <span class="mh">$e</span><span class="nv">nv</span>:<span class="nv">PATH</span> <span class="o">=</span> [<span class="nv">String</span>]::<span class="nv">Join</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">;</span><span class="s1">&#39;</span>, $<span class="nv">Path</span><span class="ss">)</span>
-  }
-}
+<span class="w">    </span><span class="err">$</span><span class="nl">env</span><span class="p">:</span><span class="k">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">String</span><span class="o">]::</span><span class="k">Join</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="k">Path</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
 
-<span class="nv">Add</span><span class="o">-</span><span class="nv">Path</span> <span class="o">-</span><span class="nv">Directory</span> <span class="s2">&quot;</span><span class="s">C:\Program Files (x86)\Windows Kits\10\bin\x64\</span><span class="s2">&quot;</span>
-</pre></div>
-
+<span class="k">Add</span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="o">-</span><span class="n">Directory</span><span class="w"> </span><span class="ss">&quot;C:\Program Files (x86)\Windows Kits\10\bin\x64\&quot;</span><span class="w"></span>
+</code></pre></div>
 
 <p>This code is create by <a href="https://github.com/adrianhall">splunk</a> and published in
 <a href="http://blogs.splunk.com/2013/07/29/powershell-profiles-and-add-path/">his&nbsp;blog</a></p>
@@ -184,48 +179,48 @@ profile. In this file, you can add the following line, then restart the&nbsp;Pow
 <a href="https://technet.microsoft.com/en-us/library/2008.10.windowspowershell.aspx">MicroSoft Documentation</a>.</p>
 <p><span class="caps">PS</span>. In my environment, running cusgom script was disabled. I had to run the
 following command to enable to run the&nbsp;script.</p>
-<div class="highlight"><pre><span></span>Set-ExecutionPolicy remotesigned
-</pre></div>
+<div class="highlight"><pre><span></span><code>Set-ExecutionPolicy remotesigned
+</code></pre></div>
             </div>
             <div class="post_list">
                 <span>By </span>
-                <a href="https://soundlake.net/author/soundlake">@soundlake</a>
+                <a href="https://soundlake.xyz/author/soundlake">@soundlake</a>
                 <span> in </span>
-                <span class="post_category"><a href="https://soundlake.net/category/dev.html" rel="bookmark"
+                <span class="post_category"><a href="https://soundlake.xyz/category/dev.html" rel="bookmark"
                                                title="Permalink to Dev">[ Dev ]</a></span>
                 <span class="post_date">Wed 28 December 2016</span>
                 <div><span>Tags : </span>
-                            <span><a href="https://soundlake.net/tag/windows.html">#Windows, </a></span>
-                            <span><a href="https://soundlake.net/tag/powershell.html">#PowerShell, </a></span>
-                            <span><a href="https://soundlake.net/tag/environment.html">#environment, </a></span>
+                            <span><a href="https://soundlake.xyz/tag/windows.html">#Windows, </a></span>
+                            <span><a href="https://soundlake.xyz/tag/powershell.html">#PowerShell, </a></span>
+                            <span><a href="https://soundlake.xyz/tag/environment.html">#environment, </a></span>
                 </div>
 
                 <div class="social">
                     <span class="twitter"><a target="_blank" rel="nofollow"
                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
                                              title="Twitter"
-                                             href="https://twitter.com/share?url=https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html&text=Add Binary Path in PowerShell&via=sound_lake">
+                                             href="https://twitter.com/share?url=https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html&text=Add Binary Path in PowerShell&via=sound_lake">
                         <i class="fab fa-twitter fa-2x"></i></a></span>
 
                     <span class="gplus"><a target="_blank" title="Google +"
-                                           href="https://plus.google.com/share?url=https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html&hl=fr"
+                                           href="https://plus.google.com/share?url=https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html&hl=fr"
                                            rel="nofollow"
                                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
                         <i class="fab fa-google-plus fa-2x"></i></a></span>
 
                     <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
                                               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
-                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html&t=Add Binary Path in PowerShell">
+                                              href="https://www.facebook.com/sharer.php?u=https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html&t=Add Binary Path in PowerShell">
                         <i class="fab fa-facebook fa-2x"></i></a></span>
 
                     <a target="_blank" title="Linkedin"
-                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html&title=Add Binary Path in PowerShell"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html&title=Add Binary Path in PowerShell"
                        rel="nofollow"
                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">
                         <i class="fab fa-linkedin fa-2x"></i></a></span>
 
                     <span class="mail"><a
-                            href="mailto:?subject=Add Binary Path in PowerShell&amp;body=Viens découvrir un article à propos de [Add Binary Path in PowerShell] sur le site de soundlake. https://soundlake.net/posts/2016/12/28/add-binary-path-in-powershell.html"
+                            href="mailto:?subject=Add Binary Path in PowerShell&amp;body=Viens découvrir un article à propos de [Add Binary Path in PowerShell] sur le site de soundlake. https://soundlake.xyz/posts/2016/12/28/add-binary-path-in-powershell.html"
                             title="Share by Email" target="_blank">
                         <i class="fas fa-envelope fa-2x"></i></a></span>
                 </div>
